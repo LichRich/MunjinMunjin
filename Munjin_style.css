@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+}
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-color: #212121;
+  color: #fff;
+}
+form{
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 25px;
+}
+section, footer{
+  display: flex;
+  justify-content: center;
+}
+table{
+  border-spacing: 5px;
+}
+table label{
+  margin-left: 5px;
+}
+footer{
+  flex-direction: column;
+  margin-top: 7px;
+}
+button{
+  padding: 3px;
+}
+#btn_login{
+  margin-bottom: 2px;
+}
