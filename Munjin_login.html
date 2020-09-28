@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html lang="ko" dir="ltr">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="content-type" charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="Munjin_style.css">
+    </style>
     <title>Login</title>
   </head>
   <body>
-    <header>
-      <h3>문진문진</h3>
-    </header>
     <!-- Login Session -->
-    <form action="index.html" method="post">
-      <section>
-        <table>
-          <tr><td>로그인</td></tr>
-          <tr><td><input id="user_id" type="text" name="ID" placeholder="ID" size="25"></td></tr>
-          <tr><td><input id="user_pw" type="password" name="PW" placeholder="Password" size="25"></td></tr>
-          <tr><td><input id="check_save" type="checkbox" name="check_save"><label for="check_save">로그인 정보 저장</label></td></tr>
-        </table>
-      </section>
-      <footer>
-        <button type="submit" name="login" id="btn_login">로그인</button>
-        <button type="button" name="sign_up" id="btn_signUp">회원가입</button>
-      </footer>
-    </form>
+    <div class="container">  
+      <h3>로그인</h3>
+      <input class="form-control" id="user_id" type="text" name="ID" placeholder="ID" >
+      <input class="form-control" id="user_pw" type="password" name="PW" placeholder="Password">
+      <input id="check_save" type="checkbox" name="check_save"><label for="check_save">로그인 정보 저장</label>
+      <div>
+          <button class="btn btn-default" type="submit" name="login" id="btn_login" >로그인</button>
+          <button class="btn btn-default" type="button" name="sign_up" id="btn_signUp">회원가입</button>
+      </div>
+    </div>
   </body>
 </html>
