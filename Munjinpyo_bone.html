@@ -1,54 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="Munjin_style.css">
     <title>정형외과</title>
 </head>
 <body>
-    1. 첫 내원이신가요?
-   <input type="checkbox"> 예 <input type="checkbox">아니요 <input type="text" placeholder="기재: ">
-   <br>
+    <div class="container">
 
-    2. 어디가 불편하신가요?
-    <input type="checkbox">어깨
-    <input type="checkbox">팔
-    <input type="checkbox">다리
-    <input type="checkbox">허리
-    <input type="checkbox">목
-    <input type="checkbox">발  
-    <input type="checkbox">무릎
-    <input type="checkbox">골반
-    <input type="checkbox">쇄골
-    <input type="checkbox">기타        
-    <br>
-    3. 다친적이 있나요?
-    <input type="checkbox">예<input type="text" placeholder="기재: "> <input type="checkbox">아니오  
-    <br>
-    4. 통증 양상은?(언제부터, 어떻게, 통증정도 점수0~10) <br>
-    <textarea name="" id="" cols="30" rows="3"></textarea>
-    <br>
+        <div class="row">1. 첫 내원이신가요?</div>
+        <div class="row"><input type="radio"> 예 <input type="radio">아니요</div>
 
-    5. 과거력
-    <input type="checkbox">없다
-    <input type="checkbox">당뇨
-    <input type="checkbox">고혈압
-    <input type="checkbox">종양
-    <input type="checkbox">폐결핵 
-    <input type="checkbox">간염
-    <input type="checkbox">기타        
-    <br>
-    6. 수술 하신적 있으신가요? 
-    <input type="checkbox">예 <input type="text"> <input type="checkbox">아니오  
-    <br>
-    7. 가져오신 자료(영상자료, 진료 의뢰서 ,소견서)가 있나요?
-    <input type="checkbox">예 <input type="checkbox">아니오
-    <br>
-    8. 검사 및 투약을 위한 고려사항 <br>
-    (1) 알러지 <input type="radio">없다 <input type="radio">있다 <input type="text" placeholder="약물, 음식..."> <br>
-    (2) 최근 복용한 약물  <input type="radio"> 없다 <input type="radio">있다 약품명: <input type="text"> <br>
-    (3) 임신 중 <input type="radio">해당  <input type="radio">해당 없음 <br>
-    (4) 수유 중 <input type="radio">해당 <input type="radio">해당 없음
-    <button onClick="location.href='./Munjin_3.html'">제출</button>
+        <div class="row">2. 어디가 불편하신가요?</div>
+        <table>
+            <tr>
+                <td><input type="checkbox">어깨</td>
+                <td><input type="checkbox">팔</td>
+                <td><input type="checkbox">다리</td>
+                <td><input type="checkbox">허리</td>
+                <td><input type="checkbox">목</td>
+            </tr>
+            <tr>
+            <td><input type="checkbox">발</td> 
+            <td><input type="checkbox">무릎</td>
+            <td><input type="checkbox">골반</td>
+            <td><input type="checkbox">쇄골</td>
+            <td><input type="checkbox">기타</td>
+            </tr>        
+        </table>
+     
+        <div class="row">3. 다친적이 있나요?</div>
+        <div class="row">
+            <input type="radio" name="bone3">예
+            <input type="text" placeholder="기재: ">
+            <input type="radio" name="bone3">아니오
+        </div>
+
+        <div class="row">4. 통증 양상은?(언제부터, 어떻게, 통증정도 점수0~10)</div>
+        <div class="row"><textarea name="" id="" cols="30" rows="3"></textarea></div>
+
+        <div class="row">5. 과거력</div>
+        <div class="row"><input type="checkbox">없다
+        <input type="checkbox">당뇨
+        <input type="checkbox">고혈압
+        <input type="checkbox">종양
+        <input type="checkbox">폐결핵 
+        <input type="checkbox">간염
+        <input type="checkbox">기타        
+        </div>
+
+        <div class="row">6. 수술 하신적 있으신가요?</div>
+        <div class="row"><input type="checkbox">예 <input type="text"> <input type="checkbox">아니오</div>
+        
+        <div class="row">7. 가져오신 자료(영상자료, 진료 의뢰서 ,소견서)가 있나요?</div>
+        <input type="checkbox">예 <input type="checkbox">아니오
+        
+        <div class="row">8. 검사 및 투약을 위한 고려사항</div>
+        <div class="row">(1) 알러지 <input type="radio">없다 <input type="radio">있다 <input type="text" placeholder="약물, 음식..."> </div>
+        <div class="row">(2) 최근 복용한 약물  <input type="radio"> 없다 <input type="radio">있다 약품명: <input type="text"> </div>
+        <div class="row">(3) 임신 중 <input type="radio">해당  <input type="radio">해당 없음 </div>
+        <div class="row">(4) 수유 중 <input type="radio">해당 <input type="radio">해당 없음</div>
+        
+        <button class="btn btn-default" onClick="location.href='./Munjin_3.html'">제출</button>
+    </div>
 </body>
 </html>

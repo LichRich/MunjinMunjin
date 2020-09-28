@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="ko" dir="ltr">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="content-type" charset="utf-8">
-    <link rel="stylesheet" href="Munjin_style.css">
     <title>Main</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="Munjin_style.css">
   </head>
   <body>
-    <header>
-      <h3>문진문진</h3>
-    </header>
-      <section>
-        <table>
-          <tr><td>(대충 로고같은 짤)</td></tr>
-          <tr><td><button id="작성" onClick="location.href='./Munjin_1.html'">작성</button>
-                  <button id="조회" onClick="location.href='./Munjin_6.html'">조회</button></td></tr>
-          </table>
-      </section>
-    </form>
-  </body>
+    <div class="container" >
+          <img src="./rabbit.jpeg" alt="logo" class="img-responsive center-block img-circle">
+          <h1>문진문진</h1>
+          <div>
+          <button type="button" class="btn btn-default" onClick="location.href='Munjin_1.html'">문진표 새로 작성하기</button>
+          <button type="button" class="btn btn-default" onClick="location.href='Munjin_6.html'">지난 문진표 조회하기</button>
+          </div>
+    </div>
+</body>
 </html>

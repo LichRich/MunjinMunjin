@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="Munjin_style.css">
     <title>피부과</title>
 </head>
 <body>
-    1. 어떻게 불편하십니까?
+    <div class="container">
+    1. 어떻게 불편하십니까? <br>
     <input type="checkbox">가려움
     <input type="checkbox">발진
     <input type="checkbox">수포
@@ -15,11 +19,11 @@
     <input type="checkbox">통증
     <br>
     
-    2. 언제부터 증상이 발상하였습니까?
+    2. 언제부터 증상이 발상하였습니까? <br>
     <input type="radio">당일
     <input type="radio">7일전
     <input type="radio">15일전
-    <input type="radio">30일전   
+    <input type="radio">30일전   <br>
     <input type="radio">3개월전
     <input type="radio">6개월전
     <input type="radio">1년이상
@@ -29,7 +33,7 @@
     <input type="text">
     <br>
 
-    4. 3개월동안 복용하신 약물이 있으십니까?
+    4. 3개월동안 복용하신 약물이 있으십니까? <br>
     <input type="radio">예 <input type="text">
     <input type="radio">아니오
     <br>
@@ -42,6 +46,7 @@
     <br>
     ((신체 그림))
     <br>
-    <button onClick="location.href='./Munjin_3.html'">제출</button>
+    <button class="btn btn-default" onClick="location.href='./Munjin_3.html'">제출</button>
+    </div>
 </body>
 </html>
