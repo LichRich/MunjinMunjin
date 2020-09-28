@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko" dir="ltr">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="content-type" charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="Munjin_style.css">
     <title>진단을 위한 추가 설문</title>
     <style>
+        html, body {
+	        width: 100%;
+            height: 100%;
+        }
         aside {
             position: fixed;
             right: 20px;
@@ -15,8 +16,8 @@
         }
         #footer {
             position: fixed; 
-            bottom: 0;
-            width:100%;
+            bottom: 0; 
+            width: 100%;
             }
     </style>
   </head>
@@ -31,7 +32,7 @@
         <button onClick="location.href='Munjin_5.html'">종료하기</button>
       </aside>
       <footer id="footer">
-       <input class="form-control col-xs-12" type="text" style="height: 5vh">
+       <input type="text" style="height: 3em">
       </footer>
     </form>
   </body>
