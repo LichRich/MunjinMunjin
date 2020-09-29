@@ -1,35 +1,4 @@
 /************************* COMMON ************************/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  background-color: #add8e6;
-  font-family: sans-serif;
-}
-#header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
-  font-size: 25px;
-  font-weight: bold;
-}
-.container {
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-table {
-  margin-left: auto;
-  margin-right: auto;
-}
-.question{
-  padding: 0;
-  margin: 5px 0;
-}
 
 /************************* BONE ************************/
 

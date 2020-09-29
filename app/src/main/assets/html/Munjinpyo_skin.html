@@ -5,48 +5,56 @@
     <meta http-equiv="content-type" charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="../js/Munjinpyo_script.js"></script>
     <link rel="stylesheet" href="../css/Munjinpyo_style.css">
     <title>피부과</title>
 </head>
 <body>
-    <div class="container">
-    <p class="question">1. 어떻게 불편하십니까?</p>
-    <input type="checkbox">가려움
-    <input type="checkbox">발진
-    <input type="checkbox">수포
-    <input type="checkbox">두드러기
-    <input type="checkbox">피부벗겨짐
-    <input type="checkbox">통증
-    <br>
+  <!-- Header -->
+  <div id="header">피부과 문진표</div>
 
-    <p class="question">2. 언제부터 증상이 발상하였습니까?</p>
-    <input type="radio">당일
-    <input type="radio">7일전
-    <input type="radio">15일전
-    <input type="radio">30일전   <br>
-    <input type="radio">3개월전
-    <input type="radio">6개월전
-    <input type="radio">1년이상
-    <br>
+  <div class="container">
+    <form action="Munjin_3_pyo.html" method="post">
+      <div id="div_pain_point">
+        <p class="question">1. 어떻게 불편하십니까?</p>
+        <label><input name="cb_pain_point" class="cb_answers" type="checkbox" value="itch"> 가려움 </label>
+        <label><input name="cb_pain_point" class="cb_answers" type="checkbox" value="rash"> 발진 </label>
+        <label><input name="cb_pain_point" class="cb_answers" type="checkbox" value="bubble"> 수포 </label>
+        <label><input name="cb_pain_point" class="cb_answers" type="checkbox" value="urticaria"> 두드러기 </label>
+        <label><input name="cb_pain_point" class="cb_answers" type="checkbox" value="peel"> 피부벗겨짐 </label>
+        <label><input name="cb_pain_point" class="cb_answers" type="checkbox" value="agony"> 통증</label>
+      </div>
+      <div id="div_pain_since">
+        <p class="question">2. 언제부터 증상이 발상하였습니까?</p>
+        <label><input name="rb_pain_since" class="rb_answers" type="radio" value="1"> 당일</label>
+        <label><input name="rb_pain_since" class="rb_answers" type="radio" value="2"> 7일전</label>
+        <label><input name="rb_pain_since" class="rb_answers" type="radio" value="3"> 15일전</label>
+        <label><input name="rb_pain_since" class="rb_answers" type="radio" value="4"> 30일전</label>   <br>
+        <label><input name="rb_pain_since" class="rb_answers" type="radio" value="5"> 3개월전</label>
+        <label><input name="rb_pain_since" class="rb_answers" type="radio" value="6"> 6개월전</label>
+        <label><input name="rb_pain_since" class="rb_answers" type="radio" value="7"> 1년이상</label>
+      </div>
+      <div id="div_pain_term">
+        <p class="question">3. 증상으로 인해 치료 받으신 기왕력 및 기간</p>
+        <p style="margin:0;"><label><input id="pain_term_yes" name="rb_pain_exp" class="rb_answers" type="radio" value="0"> 있음</label>
+        <input id="txt_pain_term" type="text" disabled></p>
+        <label><input name="rb_pain_exp" class="rb_answers" type="radio" value="1"> 없음</label>
+      </div>
+      <div id="div_other_drug">
+        <p class="question">4. 3개월동안 복용하신 약물이 있으십니까?</p>
+        <p style="margin:0;"><label><input id="other_drug_yes" name="rb_other_drug" type="radio" value="0"> 예</label> <input type="text" disabled></p>
+        <label><input name="rb_other_drug" type="radio" value="1"> 아니오</label>
+      </div>
+      <div id="div_worst_point">
+        <p class="question">5. 가장 불편하신 곳은 어디입니까? <input id="worst_point" type="text" name="worst_point"> </p>
+      </div>
+      <div id="img_check_point">
+        <p class="question">6. 불편한 곳을 표시하십시오.</p>
+        ((신체 그림))
+      </div>
+      <button class="btn btn-default" type="submit">제출</button>
+    </form>
+  </div>
 
-    3. 증상으로 인해 치료 받으신 기왕력 및 기간
-    <input type="text">
-    <br>
-
-    4. 3개월동안 복용하신 약물이 있으십니까? <br>
-    <input type="radio">예 <input type="text">
-    <input type="radio">아니오
-    <br>
-
-    5. 가장 불편하신 곳은 어디입니까?
-    <input type="text">
-    <br>
-
-    6. 불편한 곳을 표시하십시오.
-    <br>
-    ((신체 그림))
-    <br>
-    <button class="btn btn-default" onClick="location.href='./Munjin_3.html'">제출</button>
-    </div>
 </body>
 </html>
