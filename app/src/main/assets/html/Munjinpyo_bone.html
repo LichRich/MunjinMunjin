@@ -9,62 +9,121 @@
     <title>정형외과</title>
 </head>
 <body>
-    <div class="container">
 
-        <div class="row">1. 첫 내원이신가요?</div>
-        <div class="row"><input type="radio"> 예 <input type="radio">아니요</div>
+  <!-- Header -->
+  <div id="header">정형외과 문진표</div>
 
-        <div class="row">2. 어디가 불편하신가요?</div>
+  <!-- Container -->
+  <div class="container">
+
+    <form action="Munjin_3_pyo.html" method="post">
+
+      <div class="divPainPoint">
+        <p class="question">1. 어디가 불편하신가요?</p>
         <table>
-            <tr>
-                <td><input type="checkbox">어깨</td>
-                <td><input type="checkbox">팔</td>
-                <td><input type="checkbox">다리</td>
-                <td><input type="checkbox">허리</td>
-                <td><input type="checkbox">목</td>
-            </tr>
-            <tr>
-            <td><input type="checkbox">발</td>
-            <td><input type="checkbox">무릎</td>
-            <td><input type="checkbox">골반</td>
-            <td><input type="checkbox">쇄골</td>
-            <td><input type="checkbox">기타</td>
-            </tr>
+          <tr>
+            <td><label><input name="cb_pain_point" type="checkbox" value="어깨"> 어깨</label></td>
+            <td><label><input name="cb_pain_point" type="checkbox" value="팔"> 팔</label></td>
+            <td><label><input name="cb_pain_point" type="checkbox" value="다리"> 다리</label></td>
+            <td><label><input name="cb_pain_point" type="checkbox" value="허리"> 허리</label></td>
+            <td><label><input name="cb_pain_point" type="checkbox" value="목"> 목</label></td>
+          </tr>
+          <tr>
+            <td><label><input name="cb_pain_point" type="checkbox" value="발"> 발</label></td>
+            <td><label><input name="cb_pain_point" type="checkbox" value="무릎"> 무릎</label></td>
+            <td><label><input name="cb_pain_point" type="checkbox" value="골반"> 골반</label></td>
+            <td><label><input name="cb_pain_point" type="checkbox" value="쇄골"> 쇄골</label></td>
+            <td>
+              <label><input id="cbPainPointOther" name="cb_pain_point" type="checkbox" value="기타"> 기타</label>
+              <input id="txtPainPointOther" type="text" name="txt_pain_point_other" disabled>
+            </td>
+          </tr>
         </table>
+      </div>
 
-        <div class="row">3. 다친적이 있나요?</div>
-        <div class="row">
-            <input type="radio" name="bone3">예
-            <input type="text" placeholder="기재: ">
-            <input type="radio" name="bone3">아니오
-        </div>
+      <div class="div_hurt_exp">
+        <p class="question">2. 다친적이 있나요?</p>
+        <label><input type="radio" name="rb_hurt_exp" value="0"> 예</label>
+        <input id="txt_hurt_exp" type="text" size="30" disabled> <br>
+        <label><input type="radio" name="rb_hurt_exp" value="1"> 아니오</label>
+      </div>
 
-        <div class="row">4. 통증 양상은?(언제부터, 어떻게, 통증정도 점수0~10)</div>
-        <div class="row"><textarea name="" id="" cols="30" rows="3"></textarea></div>
+      <div class="div_pain_kind">
+        <p class="question">3. 통증 양상은?(언제부터, 어떻게, 통증정도 점수0~10)</p>
+        <textarea name="" id="" cols="40" rows="4"></textarea>
+      </div>
 
-        <div class="row">5. 과거력</div>
-        <div class="row"><input type="checkbox">없다
-        <input type="checkbox">당뇨
-        <input type="checkbox">고혈압
-        <input type="checkbox">종양
-        <input type="checkbox">폐결핵
-        <input type="checkbox">간염
-        <input type="checkbox">기타
-        </div>
+      <div class="div_history">
+        <p class="question">4. 과거력</p>
+        <table>
+          <tr>
+            <td><label><input type="checkbox" name="cbHistory" value="none"> 없다</label></td>
+            <td><label><input type="checkbox" name="cbHistory" value="diabetes"> 당뇨</label></td>
+            <td><label><input type="checkbox" name="cbHistory" value="hypertension"> 고혈압</label></td>
+            <td><label><input type="checkbox" name="cbHistory" value="tumor"> 종양</label><br></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox" name="cbHistory" value="TB"> 폐결핵</label></td>
+            <td><label><input type="checkbox" name="cbHistory" value="hepatitis"> 간염</label></td>
+            <td><label><input id="cbHisOther" type="checkbox" name="cbHistory" value="other"> 기타</label></td>
+            <td><input id="txtHisOther" type="text" disabled></td>
+          </tr>
+        </table>
+      </div>
 
-        <div class="row">6. 수술 하신적 있으신가요?</div>
-        <div class="row"><input type="checkbox">예 <input type="text"> <input type="checkbox">아니오</div>
+      <div class="div_surgeryexp">
+        <p class="question">5. 수술 하신적 있으신가요?</p>
+        <p style="margin:0;">
+          <label><input type="radio" name="rb_surgeryexp" value="0"> 예</label>
+          <input id="txtSurgeryExp" type="text" disabled>
+        </p>
+        <label><input type="radio" name="rb_surgeryexp" value="1"> 아니오</label>
+      </div>
 
-        <div class="row">7. 가져오신 자료(영상자료, 진료 의뢰서 ,소견서)가 있나요?</div>
-        <input type="checkbox">예 <input type="checkbox">아니오
+      <div class="div_bring">
+        <p class="question">6. 가져오신 자료(영상자료, 진료 의뢰서 ,소견서)가 있나요?</p>
+        <label><input type="radio" name="rb_bring" value="0"> 예</label>
+        <label><input type="radio" name="rb_bring" value="1"> 아니오</label>
+      </div>
 
-        <div class="row">8. 검사 및 투약을 위한 고려사항</div>
-        <div class="row">(1) 알러지 <input type="radio">없다 <input type="radio">있다 <input type="text" placeholder="약물, 음식..."> </div>
-        <div class="row">(2) 최근 복용한 약물  <input type="radio"> 없다 <input type="radio">있다 약품명: <input type="text"> </div>
-        <div class="row">(3) 임신 중 <input type="radio">해당  <input type="radio">해당 없음 </div>
-        <div class="row">(4) 수유 중 <input type="radio">해당 <input type="radio">해당 없음</div>
+      <div class="div_consideration">
+        <p class="question">7. 검사 및 투약을 위한 고려사항</p>
+        <table style="border-spacing:10px 5px;">
+          <tr>
+            <td>(1) 알러지</td>
+            <td>
+              <label><input type="radio" name="rb_allergy" value="0"> 있다</label>
+              <input id="txtAllergy" type="text" name="txt_allergy" placeholder="약물, 음식..." disabled>
+            </td>
+            <td><label><input type="radio" name="rb_allergy" value="1"> 없다</label></td>
+          </tr>
+          <tr>
+            <td>(2) 최근 복용한 약물</td>
+            <td>
+              <label><input type="radio" name="rb_other_drug" value="0"> 있다</label>
+              <input id="txtOtherDrug" type="text" name="txt_other_drug" placeholder="약품명" disabled>
+            </td>
+            <td><label><input type="radio" name="rb_other_drug" value="1"> 없다</label></td>
+          </tr>
+          <tr>
+            <td>(3) 임신 중</td>
+            <td><label><input type="radio" name="rb_pregnancy" value="0"> 해당</label></td>
+            <td><label><input type="radio" name="rb_pregnancy" value="1"> 해당 없음</label></td>
+          </tr>
+          <tr>
+            <td>(4) 수유 중</td>
+            <td><label><input type="radio" name="rb_lactation" value="0"> 해당</label></td>
+            <td><label><input type="radio" name="rb_lactation" value="1"> 해당 없음</label></td>
+          </tr>
+        </table>
+      </div>
 
-        <button class="btn btn-default" onClick="location.href='./Munjin_3.html'">제출</button>
-    </div>
+      <button class="btn btn-default" type="su
+      ">제출</button>
+    </form>
+  </div>
+
+  <script src="../js/Munjinpyo_script.js"></script>
+
 </body>
 </html>
