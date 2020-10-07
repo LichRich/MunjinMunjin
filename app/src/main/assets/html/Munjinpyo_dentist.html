@@ -9,93 +9,168 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
 
-    <h3>과 거 병 력</h3>
+  <!-- Header -->
+  <div id="header">치과 문진표</div>
 
-    <div class="row"> 1.지난 1년간 치과병원에 가신 적이 있습니까?</div>
-    <div class="row"><input type="radio" name="dentist1">예 <input type="radio" name="dentist1">아니오</div>
+  <!-- Container -->
+  <div class="container">
 
-    <div class="row">2.치석제거(스케일링)을 받아 보신 적이 있습니까?</div>
-    <div class="row"><input type="radio" name="dentist2">예 <input type="radio" name="dentist2">아니오</div>
+    <form action="Munjin_3_pyo.html" method="post">
 
-    <div class="row">3.자신의 구강상태에 대해 어떻게 생각하십니까?</div>
-    <table align="center">
-        <tr><td><input type="radio" name="dentist3">건강하다고 생각한다.</td></tr>
-        <tr><td><input type="radio" name="dentist3">병은 없으나 건강한 편은 아니다.</td></tr>
-        <tr><td><input type="radio" name="dentist3">무언가 이상이 있다고 생각한다.</td></tr>
-        <tr><td><input type="radio" name="dentist3">충치가 있다고 생각한다.</td></tr>
-        <tr><td><input type="radio" name="dentist3">잇몸병이 있다고 생각한다.</td></tr>
-    </table>
+      <!-- History -->
+      <h4 class="dentTitles">과거병력</h4>
+      <div class="divHistory">
 
-    <h3>식 습 관</h3>
+        <div class="divVisited">
+          <p class="question"> 1.지난 1년간 치과병원에 가신 적이 있습니까?</p>
+          <label><input type="radio" name="rb_visited" value="0"> 예 </label>
+          <label><input type="radio" name="rb_visited" value="1"> 아니오</label>
+        </div>
 
-    <div class="row">4.단 음식, 청량음료를 좋아하는 편입니까?</div>
-    <div class="row"><input type="radio" name="dentist4">그렇다
-    <input type="radio" name="dentist4">아니다
-    <input type="radio" name="dentist4">보통이다
-    </div>
+        <div class="divScaling">
+          <p class="question">2.치석제거(스케일링)을 받아 보신 적이 있습니까?</p>
+          <label><input type="radio" name="rb_scaling" value="0"> 예 </label>
+          <label><input type="radio" name="rb_scaling" value="1"> 아니오 </label>
+        </div>
 
-    <div class="row">5.질기고 딱딱한 음식을 좋아하는 편입니까?</div>
-    <div class="row"><input type="radio" name="dentist5">그렇다
-    <input type="radio" name="dentist5">아니다
-    <input type="radio" name="dentist5">보통이다
-    </div>
+        <div class="divState">
+          <p class="question">3.자신의 구강상태에 대해 어떻게 생각하십니까?</p>
+          <table class="dentState">
+            <tr><td>
+              <label>
+                <input type="radio" name="rb_state" value="0"> 건강하다고 생각한다.
+              </label>
+            </td></tr>
+            <tr><td>
+              <label>
+                <input type="radio" name="rb_state" value="1"> 병은 없으나 건강한 편은 아니다.
+              </label>
+            </td></tr>
+            <tr><td>
+              <label>
+                <input type="radio" name="rb_state" value="2"> 무언가 이상이 있다고 생각한다.
+              </label>
+            </td></tr>
+            <tr><td>
+              <label>
+                <input type="radio" name="rb_state" value="3"> 충치가 있다고 생각한다.
+              </label>
+            </td></tr>
+            <tr><td>
+              <label>
+                <input type="radio" name="rb_state" value="4"> 잇몸병이 있다고 생각한다.
+              </label>
+            </td></tr>
+          </table>
+        </div>
 
-    <div class="row">6.간식을 좋아하는 편입니까?</div>
-    <div class="row"><input type="radio" name="dentist6">그렇다
-    <input type="radio" name="dentist6">아니다
-    <input type="radio" name="dentist6">보통이다
-    </div>
+      </div>
 
-    <h3>잇 솔 질 습 관</h3>
+      <!-- Eating Habits -->
+      <h4 class="dentTitles">식습관</h4>
+      <div class="divEatHabit">
 
-    <div class="row">7.하루중 이를 닦을 때를 모두 표시하여 주세요</div>
-    <div class="row"><input type="checkbox" name="dentist7">아침 식사 전
-    <input type="checkbox" name="dentist7">아침 식사 후
-    <input type="checkbox" name="dentist7">점심 식사 후</div>
-    <div class="row"><input type="checkbox" name="dentist7">저녁 식사 후
-    <input type="checkbox" name="dentist7">잠자기 직전
-    <input type="checkbox" name="dentist7">간식 섭취 후
-    </div>
+        <div class="divSweet">
+          <p class="question">4.단 음식, 청량음료를 좋아하는 편입니까?</p>
+          <label><input type="radio" name="rb_sweet" value="0"> 그렇다 </label>
+          <label><input type="radio" name="rb_sweet" value="1"> 보통이다 </label>
+          <label><input type="radio" name="rb_sweet" value="2"> 아니다 </label>
+        </div>
 
-    <div class="row">8.이를 어떻게 닦으십니까?</div>
-    <div class="row"><input type="radio" name="dentist8">옆으로
-    <input type="radio" name="dentist8">위아래로
-    </div>
+        <div class="divTough">
+          <p class="question">5.질기고 딱딱한 음식을 좋아하는 편입니까?</p>
+          <label><input type="radio" name="rb_tough" value="0"> 그렇다 </label>
+          <label><input type="radio" name="rb_tough" value="1"> 보통이다 </label>
+          <label><input type="radio" name="rb_tough" value="2"> 아니다 </label>
+        </div>
 
-    <h3>구 강 증 상 및 증 후</h3>
+        <div class="divSnack">
+          <p class="question">6.간식을 좋아하는 편입니까?</p>
+          <label><input type="radio" name="rb_snack" value="0"> 그렇다 </label>
+          <label><input type="radio" name="rb_snack" value="1"> 보통이다 </label>
+          <label><input type="radio" name="rb_snack" value="2"> 아니다 </label>
+        </div>
+      </div>
 
-    <div class="row">9.찬음식을 먹을 때 이가 시리다.</div>
-    <div class="row"><input type="radio" name="dentist9">예
-    <input type="radio" name="dentist9">아니오
-    </div>
+      <!-- Brushing Habits -->
+      <h4 class="dentTitles">잇솔질습관</h4>
+      <div class="divBrushingHabit">
 
-    <div class="row">10.잇솔질을 할 때 이가 시리다.</div>
-    <div class="row"><input type="radio" name="dentist10">예
-    <input type="radio" name="dentist10">아니오
-    </div>
+        <div class="divBrushingWhen">
+          <p class="question">7.하루중 이를 닦을 때를 모두 표시하여 주세요</p>
+          <table>
+            <tr>
+              <td><label><input type="checkbox" name="cb_brushingWhen" value="0"> 아침식사 전 </label></td>
+              <td><label><input type="checkbox" name="cb_brushingWhen" value="1"> 아침식사 후 </label></td>
+              <td><label><input type="checkbox" name="cb_brushingWhen" value="2"> 점심식사 후 </label></td>
+            </tr>
+            <tr>
+              <td><label><input type="checkbox" name="cb_brushingWhen" value="3"> 저녁식사 후 </label></td>
+              <td><label><input type="checkbox" name="cb_brushingWhen" value="4"> 잠자기 직전 </label></td>
+              <td><label><input type="checkbox" name="cb_brushingWhen" value="5"> 간식 섭취 후 </label></td>
+            </tr>
+          </table>
+        </div>
 
-    <div class="row">11.잇몸에서 피가 잘난다.</div>
-    <div class="row"><input type="radio" name="dentist11">예
-    <input type="radio" name="dentist11">아니오
-    </div>
+        <div class="divBrushingHow">
+          <p class="question">8.이를 어떻게 닦으십니까?</p>
+          <label><input type="checkbox" name="cb_brushingHow" value="horizon"> 옆으로 </label>
+          <label><input type="checkbox" name="cb_brushingHow" value="vertical"> 위아래로 </label>
+        </div>
 
-    <div class="row">12.턱(관절)에서 소리가 나고 아프다.</div>
-    <div class="row"><input type="radio" name="dentist12">예
-    <input type="radio" name="dentist12">아니오
-    </div>
+      </div>
 
-    <div class="row">13.입에서 냄새가 난다.</div>
-    <div class="row"><input type="radio" name="dentist13">예
-    <input type="radio" name="dentist13">아니오
-    </div>
+        <!-- Disorder Signal -->
+        <h4 class="dentTitles">구강증상 및 증후</h4>
+        <div class="divDisorderSign">
 
-    <div class="row">14.이가 잘 부서지고 얇아진다.</div>
-    <div class="row"><input type="radio" name="dentist14">예
-    <input type="radio" name="dentist14">아니오
-    </div>
-    <button class="btn btn-default" onClick="location.href='./Munjin_3.html'">제출</button>
-    </div>
+          <div class="divDazzlingCold">
+            <p class="question">9.찬음식을 먹을 때 이가 시리다.</p>
+            <label><input type="radio" name="rb_dazzleCold" value="0"> 예 </label>
+            <label><input type="radio" name="rb_dazzleCold" value="1"> 아니오 </label>
+          </div>
+
+          <div class="divDazzlingBrush">
+            <p class="question">10.잇솔질을 할 때 이가 시리다.</p>
+            <label><input type="radio" name="rb_dazzleBrush" value="0"> 예 </label>
+            <label><input type="radio" name="rb_dazzleBrush" value="1"> 아니오 </label>
+          </div>
+
+          <div class="divBloodBrush">
+            <p class="question">11.잇몸에서 피가 잘난다.</p>
+            <label><input type="radio" name="rb_bloodBrush" value="0"> 예 </label>
+            <label><input type="radio" name="rb_bloodBrush" value="1"> 아니오 </label>
+          </div>
+
+          <div class="divTD">
+            <p class="question">12.턱(관절)에서 소리가 나고 아프다.</p>
+            <label><input type="radio" name="rb_chinPain" value="0"> 예 </label>
+            <label><input type="radio" name="rb_chinPain" value="1"> 아니오 </label>
+          </div>
+
+          <div class="divSmell">
+            <p class="question">13.입에서 냄새가 난다.</p>
+            <label><input type="radio" name="rb_smell" value="0"> 예 </label>
+            <label><input type="radio" name="rb_smell" value="1"> 아니오 </label>
+          </div>
+
+          <div class="divToothBroke">
+            <p class="question">14.이가 잘 부서지고 얇아진다.</p>
+            <label><input type="radio" name="rb_toothBroke" value="0"> 예 </label>
+            <label><input type="radio" name="rb_toothBroke" value="1"> 아니오 </label>
+          </div>
+
+        </div>
+
+
+        <button class="btn btn-default">저장</button>
+
+    </form>
+
+  </div>
+
+  <script src="../js/Munjinpyo_script.js"></script>
+
 </body>
 </html>
