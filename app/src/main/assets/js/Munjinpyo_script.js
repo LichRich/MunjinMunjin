@@ -123,6 +123,19 @@ for (let i = 0 ; i < rbVisited.length; i++){
 
 /************************* EYE ************************/
 
+try {
+  const cbODO = document.getElementById("cb_odOther");
+  cbODO.onchange = function () {
+    if (cbODO.checked) {
+      document.getElementById("txt_odOther").disabled = false;
+    } else {
+      document.getElementById("txt_odOther").disabled = true;
+    }
+  }
+} catch (e) {
+
+}
+
 /************************* MENTAL ************************/
 
 /************************* NEURO ************************/
