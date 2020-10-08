@@ -9,70 +9,117 @@
     <title>안과</title>
 </head>
 <body>
+
+  <!-- Header -->
+  <div id="header">안과 문진표</div>
+
     <div class="container">
-    1. 어느 눈이 불편하세요?
-    <input type="radio">우안
-    <input type="radio">좌안
-    <input type="radio">양안
-    <br>
 
-    2. 어떤 증상이 있습니까? (모두 체크 해 주세요)
-    <input type="checkbox"> 희미하게 보인다
-    <input type="checkbox"> 눈이 아프다
-    <input type="checkbox"> 눈물이 난다
-    <input type="checkbox"> 뻑뻑하다
-    <input type="checkbox"> 게인다(꺼끌꺼끌)
-    <input type="checkbox"> 찝찝하다
-    <input type="checkbox"> 충혈이 생긴다
-    <input type="checkbox"> 물체가 두 개로 보인다
-    <input type="checkbox"> 눈곱이 생긴다
-    <input type="checkbox"> 다래끼가 생겼다
-    <input type="checkbox"> 그 외 <input type="text">
-    <br>
+      <div class="divPainPoint">
+        <p class="question">1. 어느 눈이 불편하세요?</p>
+        <label><input type="radio" name="rb_eye" value="0"> 오른쪽</label>
+        <label><input type="radio" name="rb_eye" value="1"> 왼쪽</label>
+        <label><input type="radio" name="rb_eye" value="2"> 양쪽</label>
+      </div>
 
-    3. 언제부터 생긴 증상입니까?
-    <input type="text">
-    <br>
 
-    4. 상기 증상으로 다른 병원에 진료/치료 받은 적이 있습니까?
-    <input type="radio">예
-    <input type="radio">아니요
-    <br>
+      <div class="divSymtom">
+        <p class="question">2. 어떤 증상이 있습니까? (모두 체크 해 주세요)</p>
+        <table>
+          <tr>
+            <td><label><input type="checkbox" name="cb_pain_point" value="0"> 희미하게 보인다</label></td>
+            <td><label><input type="checkbox" name="cb_pain_point" value="1"> 눈이 아프다</label></td>
+            <td><label><input type="checkbox" name="cb_pain_point" value="2"> 눈물이 난다</label></td>
+            <td><label><input type="checkbox" name="cb_pain_point" value="3"> 뻑뻑하다</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox" name="cb_pain_point" value="4"> 게인다(꺼끌꺼끌)</label></td>
+            <td><label><input type="checkbox" name="cb_pain_point" value="5"> 찝찝하다</label></td>
+            <td><label><input type="checkbox" name="cb_pain_point" value="6"> 충혈이 생긴다</label></td>
+            <td><label><input type="checkbox" name="cb_pain_point" value="7"> 물체가 두 개로 보인다</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox" name="cb_pain_point" value="8"> 눈곱이 생긴다</label></td>
+            <td><label><input type="checkbox" name="cb_pain_point" value="9"> 다래끼가 생겼다</label></td>
+            <td><label><input type="checkbox" name="cb_pain_point" value="other" id="cbPainPointOther"> 그 외 </label></td>
+            <td><input type="text" id="txtPainPointOther" name="txt_pain_point_other" disabled placeholder="기타 증상을 적어주세요."></td>
+          </tr>
+        </table>
+      </div>
 
-    5. 현재 사용 중인 약물이 있습니까? (내원시 가지고 오세요)
-    <input type="radio">예
-    <input type="radio">아니요
-    <br>
 
-    6. 가지고 있는 질환은?
-    <input type="checkbox"> 혈압
-    <input type="checkbox"> 당뇨
-    <input type="checkbox"> 갑상선 질환
-    <input type="checkbox"> 결핵
-    <input type="checkbox"> 심장병
-    <input type="checkbox"> 그 외 <input type="text">
-    <br>
+      <div class="divPainWhen">
+        <p class="question">3. 언제부터 생긴 증상입니까?</p>
+        <input type="text" name="txt_pain_when" placeholder="ex) 1주일 전">
+      </div>
 
-    7. 약물 부작용이 생긴 적이 있습니까?
-    <input type="radio">예
-    <input type="radio">아니오
-    <br>
 
-    8. 약물 알레르기 반응이 생긴 적이 있습니까?
-    <input type="radio">예
-    <input type="radio">아니오
-    <br>
+      <div class="divOtherAction">
+        <p class="question">4. 상기 증상으로 다른 병원에 진료/치료 받은 적이 있습니까?</p>
+        <label><input type="radio" name="rb_otherAction" value="0"> 예</label>
+        <label><input type="radio" name="rb_otherAction" value="1"> 아니요</label>
+        <div id="divOtherActionAnswers">
+          <input type="text" class="txt_OAA" id="txt_OAAHos" placeholder="병원" disabled>
+          <input type="text" class="txt_OAA" id="txt_OAAAct" placeholder="치료과정" disabled>
+        </div>
+      </div>
 
-    9. 현재 임신 중입니까? 임신 가능성이 있습니까?
-    <input type="radio">예
-    <input type="radio">아니오
-    <br>
 
-    10. 수유중입니까?
-    <input type="radio">예
-    <input type="radio">아니오
-    <br>
-    <button class="btn btn-default">저장</button>
+      <div class="divOtherDrugs">
+        <p class="question">5. 현재 사용 중인 약물이 있습니까? (내원시 가지고 오세요)</p>
+        <label><input type="radio" name="rb_other_drug" value="0"> 예</label>
+        <label><input type="radio" name="rb_other_drug" value="1"> 아니요</label>
+      </div>
+
+
+      <div class="divOtherDisorder">
+        <p class="question">6. 가지고 있는 질환은?</p>
+        <table>
+          <tr>
+            <td><label><input type="checkbox" value="bloodPressure"> 혈압</label></td>
+            <td><label><input type="checkbox" value="diabetes"> 당뇨</label></td>
+            <td><label><input type="checkbox" value="thyroid"> 갑상선 질환</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox" value="tuber"> 결핵</label></td>
+            <td><label><input type="checkbox" value="heartDis"> 심장병</label></td>
+            <td><label><input type="checkbox" value="other" id="cb_odOther"> 그 외</label> <input type="text" id="txt_odOther" placeholder="질환명:" disabled></td>
+          </tr>
+        </table>
+      </div>
+
+
+      <div class="divDrugSide">
+        <p class="question">7. 약물 부작용 혹은 알레르기가 생긴 적이 있습니까?</p>
+        <table>
+          <tr>
+            <td>
+              <label><input type="radio" name="rb_drugSide" value="0"> 예 </label>
+              <input type="text" id="txt_drugSide" name="txt_drugSide" disabled>
+            </td>
+          </tr>
+          <tr><td><label><input type="radio" name="rb_drugSide" value="1"> 아니오 </label></td></tr>
+        </table>
+      </div>
+
+
+      <div class="divPreg">
+        <p class="question">8. 현재 임신 중입니까? 임신 가능성이 있습니까?</p>
+        <label><input type="radio" name="rb_pregnancy" value="0"> 예</label>
+        <label><input type="radio" name="rb_pregnancy" value="1"> 아니오</label>
+      </div>
+      <div class="divLactation">
+        <p class="question">9. 수유중입니까?</p>
+        <label><input type="radio" name="rb_lactation" value="0">예</label>
+        <label><input type="radio" name="rb_lactation" value="1">아니오</label>
+      </div>
+
+
+      <button class="btn btn-default">저장</button>
+
     </div>
+
+  <script src="../js/Munjinpyo_script.js"></script>
+
 </body>
 </html>
