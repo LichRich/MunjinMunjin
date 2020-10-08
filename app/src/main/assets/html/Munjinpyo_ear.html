@@ -9,84 +9,138 @@
     <title>이비인후과</title>
 </head>
 <body>
-    <div class="container">
 
-        <h3>초 진 시 문 진 표</h3>
+  <!-- Header -->
+  <div id="header">이비인후과 문진표</div>
 
-        <div class="row">1. 과거력</div>
+  <!-- Container -->
+  <div class="container">
+
+    <form action="Munjin_3_pyo.html" method="post">
+
+      <div class="divDisorderHistory">
+        <p class="question">1. 과거력</p>
         <table>
-            <tr>
-                <td><input type="checkbox">고혈압</td>
-                <td><input type="checkbox">당뇨</td>
-                <td><input type="checkbox">심장질환</td>
-            </tr>
-            <tr>
-                <td></td> <!--기타 옆에 input 있어야 하는데 input이 너무 길어서 table이 망가짐( ᵕ̩̩ㅅᵕ̩̩ )-->
-                <td><input type="checkbox"> 기타</td>
-                <td></td>
-            </tr>
+          <tr>
+            <td>
+              <label><input type="checkbox" name="cb_disorder_history" value="hypertension"> 고혈압 </label>
+            </td>
+            <td>
+              <label><input type="checkbox" name="cb_disorder_history" value="diabetes"> 당뇨 </label>
+            </td>
+            <td>
+              <label><input type="checkbox" name="cb_disorder_history" value="cardiac"> 심장질환 </label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><input type="checkbox" id="cb_dhOther" name="cb_disorder_history" value="other"> 기타</label>
+            </td>
+            <td colspan="2"><input type="text" id="txt_dhOther" disabled></td>
+          </tr>
+        </table>
+      </div>
+
+
+      <div class="divDrugSideHistory">
+        <p class="question">2. 약물부작용 과거력</p>
+        <label><input type="radio" name="rb_drugSide" value="0"> 예</label>
+        <input type="text" id="txt_drugSide" disabled>
+        <label><input type="radio" name="rb_drugSide" value="1"> 아니요</label>
+      </div>
+
+
+      <div class="divOtherAction">
+        <p class="question">3. 최근 같은 증상으로 다른 병원을 방문하거나<br>치료한 적이 있으신가요?</p>
+        <label><input type="radio" name="rb_otherAction" value="0"> 예 </label>
+        <label><input type="radio" name="rb_otherAction" value="1"> 아니오 </label>
+        <div id="divOtherActionAnswers">
+          <input type="text" class="txt_OAA" id="txt_OAAHos" placeholder="병원" disabled>
+          <input type="text" class="txt_OAA" id="txt_OAAAct" placeholder="치료과정" disabled>
+        </div>
+      </div>
+
+
+      <div class="divPainPoint">
+        <p class="question">4. 진료가 필요한 부위 및 증상은 무엇입니까?</p>
+
+        <table>
+          1) 귀
+          <tr>
+            <td><label><input type="checkbox" name="cb_earPain" value="0"> 청력</label></td>
+            <td><label><input type="checkbox" name="cb_earPain" value="1"> 이명</label></td>
+            <td><label><input type="checkbox" name="cb_earPain" value="2"> 현기증</label></td>
+            <td><label><input type="checkbox" name="cb_earPain" value="3"> 귀통증</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox" name="cb_earPain" value="4"> 두통</label></td>
+            <td><label><input type="checkbox" name="cb_earPain" value="5"> 귀지</label></td>
+            <td><label><input type="checkbox" name="cb_earPain" value="6"> 귀의 염증</label></td>
+            <td><label><input type="checkbox" name="cb_earPain" value="7"> 충만감</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox" name="cb_earPain" value="8"> 외상</label></td>
+            <td><label><input type="checkbox" name="cb_earPain" value="9"> 귀의 이물</label></td>
+            <td><label><input type="checkbox" name="cb_earPain" value="10"> 장애진단서</label></td>
+            <td><label><input type="checkbox" name="cb_earPain" value="11"> 보청기 상담</label></td>
+          </tr>
         </table>
 
-        <div class="row">2. 약물부작용 과거력</div>
-        <div class="row">
-            <input type="checkbox"> 예 <input type="text">
-            <input type="checkbox"> 아니요
-        </div>
-
-        <div class="row">3. 최근 같은 증상으로 다른 병원을 방문하거나<br>치료한 적이 있으신가요?</div>
-        <div class="row"><input type="checkbox">예 <input type="text" placeholder="병원, 치료과정을 입력해주세요">
-        <input type="checkbox">아니오</div>
-        <div class="row">4. 진료가 필요한 부위 및 증상은 무엇입니까?</div>
         <table>
-                1) 귀
-            <tr>
-                <td><input type="checkbox">청력
-                <td><input type="checkbox">이명</td>
-                <td><input type="checkbox">현기증</td>
-                <td><input type="checkbox">귀통증</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox">두통</td>
-                <td><input type="checkbox">귀지</td>
-                <td><input type="checkbox">귀의 염증</td>
-                <td><input type="checkbox">충만감</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox">외상</td>
-                <td><input type="checkbox">귀의 이물</td>
-                <td><input type="checkbox">장애진단서</td>
-                <td><input type="checkbox">보청기 상담</td>
-            </tr>
-            </table>
-            2) 코 : <br>
-            <input type="checkbox">코막힘
-            <input type="checkbox">콧물
-            <input type="checkbox">재채기
-            <input type="checkbox">후각장애
-            <input type="checkbox">알레르기 검사
-            <input type="checkbox">부비동염
-            <input type="checkbox">코피
-            <input type="checkbox">이물
-            <br>
-            3) 목 :
-            <input type="checkbox">염증, 통증
-            <input type="checkbox">고열, 전시통
-            <input type="checkbox">삼킴곤란
-            <input type="checkbox">가시
-            <input type="checkbox">기침, 가래
-            <input type="checkbox">호흡곤란
-            <input type="checkbox">음성변화
-            <input type="checkbox">코골기, 수면 무호흡증
+          2) 코 :
+          <tr>
+            <td><label><input type="checkbox" name="cb_nosePain" value="0"> 코막힘 </label></td>
+            <td><label><input type="checkbox" name="cb_nosePain" value="1"> 콧물 </label></td>
+            <td><label><input type="checkbox" name="cb_nosePain" value="2"> 재채기 </label></td>
+            <td><label><input type="checkbox" name="cb_nosePain" value="3"> 후각장애 </label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox" name="cb_nosePain" value="4"> 알레르기 검사 </label></td>
+            <td><label><input type="checkbox" name="cb_nosePain" value="5"> 부비동염 </label></td>
+            <td><label><input type="checkbox" name="cb_nosePain" value="6"> 코피 </label></td>
+            <td><label><input type="checkbox" name="cb_nosePain" value="7"> 이물 </label></td>
+          </tr>
+        </table>
+
+        <table>
+          3) 목 :
+          <tr>
+            <td><label><input type="checkbox" name="cb_neckPain" value="0"> 염증, 통증</label></td>
+            <td><label><input type="checkbox" name="cb_neckPain" value="1"> 고열, 전시통</label></td>
+            <td><label><input type="checkbox" name="cb_neckPain" value="2"> 삼킴곤란</label></td>
+            <td><label><input type="checkbox" name="cb_neckPain" value="3"> 가시</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox" name="cb_neckPain" value="4"> 기침, 가래</label></td>
+            <td><label><input type="checkbox" name="cb_neckPain" value="5"> 호흡곤란</label></td>
+            <td><label><input type="checkbox" name="cb_neckPain" value="6"> 음성변화</label></td>
+            <td><label><input type="checkbox" name="cb_neckPain" value="7"> 코골기, 수면 무호흡증</label></td>
+          </tr>
+        </table>
+      </div>
+
+
+      <div class="divOtherThings">
+        <p class="question">5. 그 외에 필요한 사항을 직접 기술해 주세요.</p>
+        <textarea name="ta_otherThings" id="ta_otherThings" cols="30" rows="3"></textarea>
+      </div>
+
+
+      <div class="divSymtomChange">
+        <p class="question">6. 이전에 내원한 적이 있으십니까?</p>
+        <label><input type="radio" name="rb_visited" value="0"> 예</label>
+        <label><input type="radio" name="rb_visited" value="1"> 아니오</label>
         <br>
-        5. 필요한 사항을 직접 기술해 주세요. <br>
-        <textarea name="" id="" cols="30" rows="3"></textarea>
-        <br>
-        < 재진시 문진표 >
-        1. 증세 변화 사항 및 필요한 사항을 기술해 주세요.
-        <br>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-        <br>
-        <button class="btn btn-default">저장</button>
-    </div>
+        <textarea name="ta_symtomChange" id="ta_symtomChange" cols="30" rows="10" disabled></textarea>
+      </div>
+
+      <button class="btn btn-default">저장</button>
+
+    </form>
+
+  </div>
+
+  <script src="../js/Munjinpyo_script.js"></script>
+
 </body>
 </html>
