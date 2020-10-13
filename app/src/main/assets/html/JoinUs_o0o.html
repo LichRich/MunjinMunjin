@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../css/Munjin_style.css">
+  </style>
+  <title>Login</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <div id="header">회원 가입</div>
+
+  <!-- Container -->
+  <div class="container">
+    <h1>환영합니다!</h1>
+
+    <div class="form-group">
+      <label for="email">Email address:</label>
+      <input type="email" class="form-control" id="email">
+    </div>
+
+    <div class="form-group">
+      <label for="name">NicName:</label>
+      <input type="text" class="form-control" id="name">
+    </div>
+
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd">
+    </div>
+
+    <button type="button" class="btn btn-default join">가입</button>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase.js"></script>
+
+  <script>
+    var firebaseEmailAuth;
+    var firebaseDatabase;
+    var userInfo;
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBWCGyjxtDL7smhVRkraxI-6EDGZuIGPvE",
+      authDomain: "munjinmunjin-75fc5.firebaseapp.com",
+      databaseURL: "https://munjinmunjin-75fc5.firebaseio.com",
+      projectId: "munjinmunjin-75fc5",
+      storageBucket: "munjinmunjin-75fc5.appspot.com",
+      messagingSenderId: "452765368961",
+      appId: "1:452765368961:web:8e7510b77ff4e7c8b18380"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    firebaseEmailAuth = firebase.auth();
+    firebaseDatabase = firebase.database();
+
+    var isAdduser = false ;
+$(document).ready(function(){
+//가입버튼 눌렀을 때 작동하는 함수
+
+$(document).on('click','.join',function(){
+//jquery를 이용해서 입력된 값을 가져온다.
+
+var email = $('#email').val();
+var password = $('#pwd').val();
+var Name = $('#name').val();
+//이메일로 가입 버튼 눌렀을 때 작동되는 함수 - firebase 인증 모듈
+
+isAdduser = true ;
+
+firebaseEmailAuth.createUserWithEmailAndPassword(email, password).catch(function(error) {
+// Handle Errors here.
+var errorCode = error.code;
+var errorMessage = error.message;
+// [START_EXCLUDE]
+if (errorCode === 'auth/wrong-password') {
+alert('Wrong password.');
+} else {
+alert(errorMessage);
+}
+console.log(error);
+isAdduser = false ;
+// document.getElementById('quickstart-sign-in').disabled = false;
+// [END_EXCLUDE]
+});
+
+});});
+
+
+
+
+/**
+* initApp handles setting up UI event listeners and registering Firebase auth listeners:
+* - firebase.auth().onAuthStateChanged: This listener is called when the user is signed in or
+* out, and that is where we update the UI.
+*/
+function initApp() {
+// Listening for auth state changes.
+// [START authstatelistener]
+firebase.auth().onAuthStateChanged(function(user) {
+// [START_EXCLUDE silent]
+// [END_EXCLUDE]
+if (user && isAdduser ) {
+// User is signed in.
+
+var ref = firebaseDatabase.ref("users/"+ user.uid); //저장될 곳을 users라는 부모 키를 레퍼런스로 지정.
+
+var Name = $('#name').val();
+
+//저장 형식
+var obj = {Name: Name};
+
+ref.set(obj); // 고유한 자식 키가 하나 생셩이 되면서 json 삽입
+
+alert("가입성공");
+
+//window.location.href = "/index.html"
+
+// [END_EXCLUDE]
+} else {
+// User is signed out.
+// [START_EXCLUDE]
+// [END_EXCLUDE]
+}
+// [START_EXCLUDE silent]
+// [END_EXCLUDE]
+});
+// [END authstatelistener]
+}
+
+window.onload = function() {
+initApp();
+};
+
+  </script>
+</body>
+
+</html>
