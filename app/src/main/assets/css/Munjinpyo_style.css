@@ -36,15 +36,15 @@ table {
 textarea {
   resize: none;
 }
+.smallTitle{
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 
 /************************* BONE ************************/
 
 /************************* DENTIST ************************/
-.dentTitles{
-  font-weight: bold;
-  margin-top: 15px;
-  margin-bottom: 7px;
-}
 .dentState {
   border-collapse: collapse;
   margin-left: 0;

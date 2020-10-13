@@ -9,35 +9,71 @@
     <title>정신건강의학과</title>
 </head>
 <body>
-    <div class="container">
-    1. 처음 방문이십니까?
-    <input type="radio">예
-    <input type="radio">아니요
-    <br>
 
-    2. 약물 부작용이 생긴 적이 있습니까?
-    <input type="radio">예 <input type="text" placeholder="진단명을 적어주세요">
-    <input type="radio">아니요
-    <br>
+  <!-- Header -->
+  <div id="header">정신건강의학과 문진표</div>
 
-    3. 현재 정신과약을 복용중이십니까?
-    <input type="radio">예
-    <input type="radio">아니요
-    <br>
+  <!-- Container -->
+  <div class="container">
 
-    4. 내원 이유와 중요한 증상에 표시해 주세요.
-    <input type="checkbox">우울증, 조울증
-    <input type="checkbox">불면증
-    <input type="checkbox">공황장애
-    <input type="checkbox">조현병(정신분열병) [<input type="checkbox"> 환청<input type="checkbox">환시 <input type="checkbox">망상 ] <br>
-    <input type="checkbox">기억력 저하
-    <input type="checkbox">자살 사고
-    <input type="checkbox">주의력 결핍 과잉 행동장애(A.D.H.D)
-    <input type="checkbox">스트레스, 공포증
-    <input type="checkbox">강박증, 완벽주의, 결벽증
-    <input type="checkbox">식이장애, 거식증
-    <br>
-    <button class="btn btn-default">저장</button>
-    </div>
+    <form action="Munjin_3_pyo.html" method="post">
+
+      <div class="divVisited">
+        <p class="question">1. 처음 방문이십니까?</p>
+        <label><input type="radio" name="rb_visited" value="0"> 예</label>
+        <label><input type="radio" name="rb_visited" value="1"> 아니요</label>
+      </div>
+
+      <div class="divDrugSide">
+        <p class="question">2. 약물 부작용이 생긴 적이 있습니까?</p>
+        <label><input type="radio" name="rb_drugSide" value="0"> 예 </label>
+        <input type="text" id="txt_drugSide" name="txt_drugSide" disabled>
+        <label><input type="radio" name="rb_drugSide" value="1"> 아니요</label>
+      </div>
+
+      <div class="divOtherDrugs">
+        <p class="question">3. 현재 정신과약을 복용중이십니까?</p>
+        <label><input type="radio" name="rb_other_drug" value="0"> 예</label>
+        <input type="text" name="txt_other_drug" id="txtOtherDrug" placeholder="약물 이름을 적어주세요" disabled>
+        <label><input type="radio" name="rb_other_drug" value="1"> 아니요</label>
+      </div>
+
+      <div class="divSymtom">
+        <p class="question">4. 내원 이유와 중요한 증상에 표시해 주세요.</p>
+        <table>
+          <tr>
+            <td><label><input type="checkbox" name="cb_symtom" value="0"> 우울증, 조울증</label></td>
+            <td><label><input type="checkbox" name="cb_symtom" value="1"> 불면증</label></td>
+            <td><label><input type="checkbox" name="cb_symtom" value="2"> 공황장애</label></td>
+            <td><label><input type="checkbox" name="cb_symtom" value="3"> 자살 사고</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox" name="cb_symtom" value="4"> 기억력 저하</label></td>
+            <td><label><input type="checkbox" name="cb_symtom" value="5"> 스트레스, 공포증</label></td>
+            <td><label><input type="checkbox" name="cb_symtom" value="6"> 강박증, 완벽주의, 결벽증</label></td>
+            <td><label><input type="checkbox" name="cb_symtom" value="7"> 식이장애, 거식증</label></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <label><input type="checkbox" name="cb_symtom" value="8" id="cb_schizo"> 조현병(정신분열병)</label>
+              [<label><input type="checkbox" name="cb_schizo" value="0" disabled> 환청</label>
+              <label><input type="checkbox" name="cb_schizo" value="1" disabled> 환시</label>
+              <label><input type="checkbox" name="cb_schizo" value="2" disabled> 망상</label>]
+            </td>
+            <td colspan="2">
+              <label><input type="checkbox" name="cb_symtom" value="9"> 주의력 결핍 과잉 행동장애(A.D.H.D)</label>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <button class="btn btn-default" type="submit">저장</button>
+
+    </form>
+
+  </div>
+
+  <script src="../js/Munjinpyo_script.js"></script>
+
 </body>
 </html>

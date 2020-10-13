@@ -9,261 +9,536 @@
     <title>신경과</title>
 </head>
 <body>
-    <div class="container">
-    <h3>어 지 러 움 문 진 표</h3>
 
-    1. 언제부터 어지러웠습니까?
-    <input type="radio">갑자기
-    <input type="radio">예전부터
-    <input type="radio"> <input type="text" size="2">일 전부터
-    <input type="radio"> <input type="text" size="2">주 전부터
-    <input type="radio"> <input type="text" size="2">달 전부터
-    <input type="radio"> <input type="text" size="2">년 전부터
-    <br>
+  <!-- Header -->
+  <div id="header">신경과 문진표</div>
 
-    2. 어지럼증 양상은 어떻습니까?
-    <input type="checkbox">내 몸이 빙빙돈다
-    <input type="checkbox">주위가 빙빙돈다
-    <input type="checkbox">머리가 멍하다/띵하다
-    <input type="checkbox">공중을 걷는 기분이다
-    <input type="checkbox">걸으면 한쪽으로 기울어지거나 쓰러지려고 한다
-    <input type="checkbox">아찔/어찔하다
-    <input type="checkbox">일어서면 눈앞이 컴컴해진다
-    <input type="checkbox">쓰러질거 같다
-    <input type="checkbox">그 외 <input type="text">
-    <br>
+  <div class="container">
 
-    3. 어지러움을 느낄 때 증상은 얼마나 지속됩니까?
-    <input type="checkbox">수초간
-    <input type="checkbox">수분간
-    <input type="checkbox">10분정도
-    <input type="checkbox">30분정도
-    <input type="checkbox">1시간
-    <input type="checkbox">수시간
-    <input type="checkbox">반나절
-    <input type="checkbox">하루이상
-    <br>
+    <div class="divDizzy">
 
-    4. 어떨 때 가장 어지러움이 심합니까?
-    <input type="checkbox">고개를 돌리거나 숙일 때
-    <input type="checkbox">자리에서 일어날 때(기립 시)
-    <input type="checkbox">누울 때나 누웠다가 일어날 때
-    <input type="checkbox">걸을 때
-    <input type="checkbox">자세와 관계없이 계속 비슷하다
-    <input type="checkbox">신경 많이 쓸 때
-    <input type="checkbox">그 외 <input type="text">
-    <br>
 
-    5. 어지럼증과 동반되는 증상이 있습니까? 있다면 어떤 것이 있습니까?
+      <h4 class="smallTitle">어 지 러 움 문 진 표</h4>
 
-    <input type="checkbox">동반증상 없음
-    <input type="checkbox">두통
-    <input type="checkbox">오심, 구토
-    <input type="checkbox">물체가 흐리게 보인다
-    <input type="checkbox">눈이 침침하다
-    <input type="checkbox">한쪽 팔 다리 마비가 있다
-    <input type="checkbox">한쪽 다리가 저린다
-    <input type="checkbox">팔다리가 자기 마음대로 움직인다
-    <input type="checkbox">물체가 둘로 보인다
-    <input type="checkbox">의식이 흐려진다
-    <input type="checkbox">보행장애(걸으면 비틀거리거나 걷기 힘들다)
-    <input type="checkbox">말이 어눌하다
-    <input type="checkbox">음식을 삼키기 곤란하다
-    <input type="checkbox">얼굴이나 입 주위가 저린다
-    <input type="checkbox">경기를 한다
-    <input type="checkbox">청각장애
-    <input type="checkbox">귀안에 뭔가 가득찬 느낌이다
-    <input type="checkbox">이명(귀에 소리가 난다)
-    <input type="checkbox">귀에서 진물이 난다
-    <input type="checkbox">소리에 민감하다
-    <input type="checkbox">소리가 이상하게 들린다
-    <input type="checkbox">기억장애
-    <input type="checkbox">그 외
-    <br>
+      <div class="divPainWhen">
+        <p class="question">1. 언제부터 어지러웠습니까?</p>
+        <input type="text" name="txt_pain_when" placeholder="ex) 1주일 전">
+      </div>
 
-    6. 특정 자세에서 어지럼증이 발생한다면 어떤 자세에서 발생합니까?<br>
-    (예: 누워서 고개를 왼쪽으로 돌리면 어지러움이 심해진다 등) <br>
-    <textarea name="" id="" cols="30" rows="3"></textarea>
-    <br>
 
-    7. 어지럼증의 유발 또는 악화 요소는 어떤 것이 있습니까?
-    <input type="checkbox">과도한 식사 후
-    <input type="checkbox">공복상태
-    <input type="checkbox">스트레스
-    <input type="checkbox">불면
-    <input type="checkbox">과로
-    <input type="checkbox">커피
-    <input type="checkbox">흡연
-    <input type="checkbox">과음
-    <input type="checkbox">운동
-    <input type="checkbox">성관계
-    <input type="checkbox">월경
-    <input type="checkbox">그 외 <input type="text">
-    <br>
-    8. 난청이 있습니까? <br>
-    1) 있다면 어느 쪽이 잘 들리지 않습니까?
-    <input type="checkbox">오른쪽
-    <input type="checkbox">왼쪽
-    <input type="checkbox">양쪽 다
-    <br>
-    2) 평소 이명이 있습니까?
-    <input type="radio">예 (<input type="checkbox">오른쪽 <input type="checkbox">왼쪽 <input type="checkbox">양쪽 다)
-    <input type="radio">아니요
-    <br>
-    3) 귀가 멍멍하고 꽉 찬 느낌이 있습니까?
-    <input type="radio">예 (<input type="checkbox">오른쪽 <input type="checkbox">왼쪽 <input type="checkbox">양쪽 다)
-    <input type="radio">아니요
+      <div class="divDizzySymtom">
+        <p class="question">2. 어지럼증 양상은 어떻습니까?</p>
+        <table>
+          <tr>
+            <td><label><input type="checkbox" name="cb_dizzySymtom" value="0"> 내 몸이 빙빙돈다</label></td>
+            <td><label><input type="checkbox" name="cb_dizzySymtom" value="1"> 주위가 빙빙돈다</label></td>
+            <td><label><input type="checkbox" name="cb_dizzySymtom" value="2"> 머리가 멍하다/띵하다</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox" name="cb_dizzySymtom" value="3"> 공중을 걷는 기분이다</label></td>
+            <td><label><input type="checkbox" name="cb_dizzySymtom" value="4"> 아찔/어찔하다</label></td>
+            <td><label><input type="checkbox" name="cb_dizzySymtom" value="5"> 걸으면 한쪽으로 기울어지거나 쓰러질 것 같다</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox" name="cb_dizzySymtom" value="6"> 일어서면 눈앞이 컴컴해진다</label></td>
+            <td><label><input type="checkbox" name="cb_dizzySymtom" value="7"> 쓰러질거 같다</label></td>
+            <td><label><input type="checkbox" id="cb_dizzyOther" name="cb_dizzySymtom" value="8"> 그 외 <input type="text" id="txt_dizzyOther" disabled></label></td>
+          </tr>
+        </table>
+      </div>
 
-    9. 병력상 다음에 해당하는 사항이 있습니까? 있다면 자세히 적어 주십시오.
-    <input type="checkbox"> 최근 머리를 다친 적이 있다 : <input type="text">
-    <input type="checkbox">만성 음주 : <input type="text">
-    <input type="checkbox">과도 흡연 : <input type="text">
-    <input type="checkbox">시끄러운 잡음에 오래 노출 된 적이 있다 : <input type="text">
-    <input type="checkbox">귀에 염증을 앓은 적이 있다 : <input type="text">
-    <input type="checkbox">최근에 안경도수를 바꾼 적이 있다 : <input type="text">
-    <input type="checkbox">최근 목을 다친 적이 있다 : <input type="text">
-    <br>
 
-    10. 고혈압, 당뇨, 고지혈증을 진단 받은 적이 있습니까?
-    <input type="radio">예
-    <input type="radio">아니오
-    <br>
+      <div class="divDizzyDuration">
+        <p class="question">3. 어지러움 증상은 얼마나 지속됩니까?</p>
+        <table>
+          <tr>
+            <td><label><input type="checkbox" name="cb_dizzyDuration" value="0"> 수초간</label></td>
+            <td><label><input type="checkbox" name="cb_dizzyDuration" value="1"> 수분간</label></td>
+            <td><label><input type="checkbox" name="cb_dizzyDuration" value="2"> 10분정도</label></td>
+            <td><label><input type="checkbox" name="cb_dizzyDuration" value="3"> 30분정도</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox" name="cb_dizzyDuration" value="4"> 1시간</label></td>
+            <td><label><input type="checkbox" name="cb_dizzyDuration" value="5"> 수시간</label></td>
+            <td><label><input type="checkbox" name="cb_dizzyDuration" value="6"> 반나절</label></td>
+            <td><label><input type="checkbox" name="cb_dizzyDuration" value="7"> 하루이상</label></td>
+          </tr>
+        </table>
+      </div>
 
-    11. 그 외 복용하는 약물이나 병력이 있습니까? 있다면 상세히 적어주세요.
-    <input type="radio">예
-    <input type="radio">아니오
-    <br>
 
-    12. 평소에 두통이 자주 있는 편입니까?
-    <input type="checkbox"> 머리가 무겁고 띵하다
-    <input type="checkbox"> 한 번씩 욱신거리고 심하게 아프면 속이 메스꺼린다
-    <br>
-    <br>
+      <div class="divDizzyTiming">
+        <p class="question">4. 어떨 때 가장 어지러움이 심합니까?</p>
+        <table>
+          <tr>
+            <td><label><input type="radio" name="rb_dizzyTiming" value="0"> 고개를 돌리거나 숙일 때</label></td>
+            <td><label><input type="radio" name="rb_dizzyTiming" value="1"> 자리에서 일어날 때(기립 시)</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="radio" name="rb_dizzyTiming" value="2"> 누울 때나 누웠다가 일어날 때</label></td>
+            <td><label><input type="radio" name="rb_dizzyTiming" value="3"> 걸을 때</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="radio" name="rb_dizzyTiming" value="4"> 자세와 관계없이 계속 비슷하다</label></td>
+            <td><label><input type="radio" name="rb_dizzyTiming" value="5"> 신경 많이 쓸 때</label></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <label>
+                <input type="radio" name="rb_dizzyTiming" value="6" id="rb_dizzyTimingOther"> 그 외
+                <input type="text" id="txt_dizzyTimingOther" disabled></label>
+              </td>
+            </tr>
+          </table>
+        </div>
 
-    <h3>두 통 문 진 표</h3>
 
-    1. 두통
-    <input type="checkbox">이번이 처음이다
-    <input type="checkbox">예전부터 한번 씩 아팠다
-    <input type="checkbox">한번씩 두통이 있었지만 이전과는 다른 양상이다
+        <div class="divDizzyWith">
+          <p class="question">5. 어지럼증과 동반되는 증상이 있습니까? 있다면 어떤 것이 있습니까?</p>
+          <p style="margin:0; padding:0;">
+            <label><input type="radio"name="rb_dizzyWith" value="0"> 있다</label>
+            <label><input type="radio"name="rb_dizzyWith" value="1"> 없다</label>
+          </p>
+          <table>
+            <tr>
+              <td><label><input type="checkbox"name="cb_dizzyWith" value="0" disabled> 두통</label></td>
+              <td><label><input type="checkbox"name="cb_dizzyWith" value="1" disabled> 오심, 구토</label></td>
+              <td><label><input type="checkbox"name="cb_dizzyWith" value="2" disabled> 물체가 흐리게 보인다</label></td>
+            </tr>
+            <tr>
+              <td><label><input type="checkbox"name="cb_dizzyWith" value="3" disabled> 한쪽 다리가 저린다</label></td>
+              <td><label><input type="checkbox"name="cb_dizzyWith" value="4" disabled> 눈이 침침하다</label></td>
+              <td><label><input type="checkbox"name="cb_dizzyWith" value="5" disabled> 한쪽 팔 다리 마비가 있다</label></td>
+            </tr>
+            <tr>
+              <td><label><input type="checkbox"name="cb_dizzyWith" value="6" disabled> 의식이 흐려진다</label></td>
+              <td><label><input type="checkbox"name="cb_dizzyWith" value="7" disabled> 물체가 둘로 보인다</label></td>
+              <td><label><input type="checkbox"name="cb_dizzyWith" value="8" disabled> 팔다리가 자기 마음대로 움직인다</label></td>
+            </tr>
+            <tr>
+              <td><label><input type="checkbox"name="cb_dizzyWith" value="9" disabled> 기억장애</label></td>
+              <td><label><input type="checkbox"name="cb_dizzyWith" value="10" disabled> 말이 어눌하다</label></td>
+              <td><label><input type="checkbox"name="cb_dizzyWith" value="11" disabled> 보행장애(걸으면 비틀거리거나 걷기 힘들다)</label></td>
+            </tr>
+            <tr>
+              <td><label><input type="checkbox"name="cb_dizzyWith" value="12" disabled> 경기를 한다</label></td>
+              <td><label><input type="checkbox"name="cb_dizzyWith" value="13" disabled> 음식을 삼키기 곤란하다</label></td>
+              <td><label><input type="checkbox"name="cb_dizzyWith" value="14" disabled> 얼굴이나 입 주위가 저린다</label></td>
+            </tr>
+            <tr>
+              <td><label><input type="checkbox"name="cb_dizzyWith" value="15" disabled> 청각장애</label></td>
+              <td><label><input type="checkbox"name="cb_dizzyWith" value="16" disabled> 귀에서 진물이 난다</label></td>
+              <td><label><input type="checkbox"name="cb_dizzyWith" value="17" disabled> 귀안에 뭔가 가득찬 느낌이다</label></td>
+            </tr>
+            <tr>
+              <td><label><input type="checkbox"name="cb_dizzyWith" value="18" disabled> 소리에 민감하다</label></td>
+              <td><label><input type="checkbox"name="cb_dizzyWith" value="19" disabled> 소리가 이상하게 들린다</label></td>
+              <td><label><input type="checkbox"name="cb_dizzyWith" value="20" disabled> 이명(귀에 소리가 난다)</label></td>
+            </tr>
+            <tr>
+              <td><label><input type="checkbox"name="cb_dizzyWith" id="cb_dizzyWithOther" value="21" disabled> 그 외</label></td>
+              <td colspan="2"><input type="text" id="txt_dizzyWithOther" disabled></td>
+            </tr>
+          </table>
+        </div>
 
-    2. 투통을 처음 느낄 때 순간적으로 아프기 시작했습니까? 천천히 아파오더니 심해졌습니까?
-    <input type="radio">순간적으로
-    <input type="radio">천천히
-    <br>
 
-    3. 두통을 느낄 때 지속시간은 얼마정도입니까?
-    <input type="radio">수초 간(순간적으로 아프다)
-    <input type="radio">수분에서 수십 분
-    <input type="radio">수시간
-    <input type="radio">하루 종일
-    <input type="radio">수일간(3일내)
-    <input type="radio">3일 이상
-    <br>
+        <div class="divDizzyPose">
+          <p class="question">6. 특정 자세에서 어지럼증이 발생한다면 어떤 자세에서 발생합니까?</p>
+          <textarea name="ta_dizzyPose" cols="33" rows="3" placeholder="예: 누워서 고개를 왼쪽으로 돌리면 어지러움이 심해진다"></textarea>
+        </div>
 
-    4. 두통은 얼마나 자주 아픕니까?
-    <input type="radio">하루에도 수차례씩
-    <input type="radio">하루에 한번(종일)
-    <input type="radio">일주일에 몇 번
-    <input type="radio">한 달에 몇 번
-    <input type="radio">일 년에 몇 번
-    <input type="radio">그 외 <input type="text">
-    <br>
 
-    5. 두통을 잘 유발하는 상황에는 어떤 것들이 있나요?
-    <input type="checkbox">스트레스
-    <input type="checkbox">불면
-    <input type="checkbox">음주
-    <input type="checkbox">감기
-    <input type="checkbox">월경
-    <input type="checkbox">특정 냄새
-    <input type="checkbox">그 외 : <input type="text">
-    <br>
+        <div class="divDizzyHarder">
+          <p class="question">7. 어지럼증의 유발 또는 악화 요소는 어떤 것이 있습니까?</p>
+          <table>
+            <tr>
+              <td><label><input type="checkbox" name="cb_dizzyHarder" value="0"> 과식</label></td>
+              <td><label><input type="checkbox" name="cb_dizzyHarder" value="1"> 공복상태</label></td>
+              <td><label><input type="checkbox" name="cb_dizzyHarder" value="2"> 스트레스</label></td>
+              <td><label><input type="checkbox" name="cb_dizzyHarder" value="3"> 불면</label></td>
+            </tr>
+            <tr>
+              <td><label><input type="checkbox" name="cb_dizzyHarder" value="4"> 과로</label></td>
+              <td><label><input type="checkbox" name="cb_dizzyHarder" value="5"> 커피</label></td>
+              <td><label><input type="checkbox" name="cb_dizzyHarder" value="6"> 흡연</label></td>
+              <td><label><input type="checkbox" name="cb_dizzyHarder" value="7"> 과음</label></td>
+            </tr>
+            <tr>
+              <td><label><input type="checkbox" name="cb_dizzyHarder" value="8"> 운동</label></td>
+              <td><label><input type="checkbox" name="cb_dizzyHarder" value="9"> 성관계</label></td>
+              <td><label><input type="checkbox" name="cb_dizzyHarder" value="10"> 월경</label></td>
+              <td>
+                <label><input type="checkbox" name="cb_dizzyHarder" value="11" id="cb_dizzyHarderOther"> 그 외</label>
+                <input type="text" id="txt_dizzyHarderOther" disabled>
+              </td>
+            </tr>
+          </table>
+        </div>
 
-    6. 두통 발생 시 머리 어느 쪽이 아픈가요?
-    <input type="radio">주로 한쪽이 아프다
-    <input type="radio">양쪽이 다 아프거나 전체적으로 아프다
-    <input type="radio">한쪽이 아플때도 있고 양쪽이 아플때도 있다
-    <br>
 
-    7. 두통의 양상은 어떤가요?
-    <input type="checkbox"> 우리하다
-    <input type="checkbox"> 조이는 느낌이 든다
-    <input type="checkbox"> 멍하다
-    <input type="checkbox"> 땡긴다
-    <input type="checkbox"> 맑지않다
-    <input type="checkbox"> 꽉꽉 찌른다
-    <input type="checkbox"> 무겁다
-    <input type="checkbox"> 욱씬거린다
-    <input type="checkbox"> 터질 것 같다
-    <input type="checkbox"> 망치로 때리는 느낌
-    <input type="checkbox"> 심장박동에 따라 머리가 두근거린다
-    <input type="checkbox"> 전기에 쏘이는 것처럼 깜짝 놀란다
-    <input type="checkbox"> 그 외 : <input type="text">
-    <br>
-    8. 두통의 정도는 전혀 아프지 않을 때가 0, 곧 죽을 만큼 심한 것을 10이라고 할 때 0에서 10사이에서 어느 정도 인가요?
-    <input type="text">
-    <br>
-    9. 머리가 아플 때 움직이거나 활동을 하면 두통이 심해지나요?
-    <input type="radio">예
-    <input type="radio">아니오
-    <br>
-    두통이 있을때는 가만히 누워있는 편인가요?
-    <input type="radio">예
-    <input type="radio">아니요
-    <br>
+        <div class="divEarProblem">
 
-    10. 두통과 함께 동반되는 증상이 있나요?
-    <input type="checkbox"> 동반증상 없음
-    <input type="checkbox"> 두통
-    <input type="checkbox"> 오심, 구토
-    <input type="checkbox"> 물체가 흐리게 보인다
-    <input type="checkbox"> 눈이 침침하다
-    <input type="checkbox"> 한쪽 팔 다리 마비가 있다
-    <input type="checkbox"> 한쪽 다리가 저린다
-    <input type="checkbox"> 팔다리가 자기 마음대로 움직인다
-    <input type="checkbox"> 물체가 둘로 보인다
-    <input type="checkbox"> 의식이 흐려진다
-    <input type="checkbox"> 보행장애(걸으면 비틀거리거나 걷기 힘들다)
-    <input type="checkbox"> 말이 어눌하다
-    <input type="checkbox"> 음식을 삼키기 곤란하다
-    <input type="checkbox"> 얼굴이나 입 주위가 저린다
-    <input type="checkbox"> 경기를 한다
-    <input type="checkbox"> 청각장애
-    <input type="checkbox"> 귀안에 뭔가 가득 찬 느낌이다
-    <input type="checkbox"> 이명(귀에 소리가 난다)
-    <input type="checkbox"> 귀에서 진물이 난다
-    <input type="checkbox"> 소리에 민감하다
-    <input type="checkbox"> 소리가 이상하게 들린다
-    <input type="checkbox"> 기억장애
-    <input type="checkbox"> 그 외;
-    <br>
-    11. 머리가 아플 때 주위가 환하게 밝거나 시끄러우면 예민해지고 짜증이 날 때가 있나요?
-    <input type="radio">예
-    <input type="radio">아니요
-    <br>
-    12. 두통이 있기 직전이나 시작과 함께 이상한 증상이 있은 적이 있나요?<br>
-    (예: 눈앞이 번쩍거리거나 한 부분이 까맣게 안 보인다) <br>
-    있다면 지속시간은 얼마 정도인가요?
-    <input type="radio">수분
-    <input type="radio">수십분
-    <input type="radio">한시간 이상
-    <br>
-    13. 평소 뒷목이나 어깨가 아프거나 당긴 적이 있나요?
-    <input type="radio">예
-    <input type="radio">아니요
-    <br>
+          <p class="question">8. 귀 관련 질문사항</p>
 
-    14. 가족중에도 두통이 자주 있는 사람이 있나요?
-    <input type="radio">예
-    <input type="radio">아니요
-    <br>
+          <div class="divHearingProb">
+            <p class="question">8-1) 난청이 있습니까?</p>
+            <p style="margin:0; padding:0;">
+              <label><input type="radio" name="rb_hardHearing" value="0"> 예</label>
+              <label><input type="radio" name="rb_hardHearing" value="1"> 아니오</label>
+            </p>
+            <label><input type="checkbox" name="cb_hardHearing" value="0" disabled> 오른쪽</label>
+            <label><input type="checkbox" name="cb_hardHearing" value="1" disabled> 왼쪽</label>
+            <label><input type="checkbox" name="cb_hardHearing" value="2" disabled> 양쪽 다</label>
+          </div>
 
-    15. 지금 복용중이 약이나 앓고 있는 병이 있나요? 있으면 적어주세요. <br>
-    복용중인 약: <input type="text"> <br>
-    앓고있는 병: <input type="text">
+          <div class="divRinging">
+            <p class="question">2) 평소 이명이 있습니까?</p>
+            <p style="margin:0; padding:0;">
+              <label><input type="radio" name="rb_ringing" value="0"> 예</label>
+              <label><input type="radio" name="rb_ringing" value="1"> 아니오</label>
+            </p>
+            <label><input type="checkbox" name="cb_ringing" value="0" disabled> 오른쪽</label>
+            <label><input type="checkbox" name="cb_ringing" value="1" disabled> 왼쪽</label>
+            <label><input type="checkbox" name="cb_ringing" value="2" disabled> 양쪽 다</label>
+          </div>
+
+          <div class="divEarDeaf">
+            <p class="question">3) 귀가 멍멍하고 꽉 찬 느낌이 있습니까?</p>
+            <p style="margin:0; padding:0;">
+              <label><input type="radio" name="rb_earDeaf" value="0"> 예</label>
+              <label><input type="radio" name="rb_earDeaf" value="1"> 아니오</label>
+            </p>
+            <label><input type="checkbox" name="cb_earDeaf" value="0" disabled> 오른쪽</label>
+            <label><input type="checkbox" name="cb_earDeaf" value="1" disabled> 왼쪽</label>
+            <label><input type="checkbox" name="cb_earDeaf" value="2" disabled> 양쪽 다</label>
+          </div>
+
+        </div>
+
+
+        <div class="divHistory">
+          <p class="question">9. 병력상 다음에 해당하는 사항이 있습니까? 있다면 자세히 적어 주십시오.</p>
+          <table>
+            <tr>
+              <td>
+                <label><input type="checkbox" name="cb_history" value="0"> 만성 음주 :</label>
+              </td>
+              <td><input type="text" name="txt_history" disabled></td>
+            </tr>
+            <tr>
+              <td>
+                <label><input type="checkbox" name="cb_history" value="1"> 과도 흡연 :</label>
+              </td>
+              <td><input type="text" name="txt_history" disabled></td>
+            </tr>
+            <tr>
+              <td><label><input type="checkbox" name="cb_history" value="2"> 최근 머리를 다친 적이 있다 :</label></td>
+              <td><input type="text" name="txt_history" disabled></td>
+            </tr>
+            <tr>
+              <td><label><input type="checkbox" name="cb_history" value="3"> 시끄러운 잡음에 오래 노출 된 적이 있다 : </label></td>
+              <td><input type="text" name="txt_history" disabled></td>
+            </tr>
+            <tr>
+              <td><label><input type="checkbox" name="cb_history" value="4"> 귀에 염증을 앓은 적이 있다 :</label></td>
+              <td><input type="text" name="txt_history" disabled></td>
+            </tr>
+            <tr>
+              <td><label><input type="checkbox" name="cb_history" value="5"> 최근에 안경도수를 바꾼 적이 있다 :</label></td>
+              <td><input type="text" name="txt_history" disabled></td>
+            </tr>
+            <tr>
+              <td><label><input type="checkbox" name="cb_history" value="6"> 최근 목을 다친 적이 있다 :</label></td>
+              <td><input type="text" name="txt_history" disabled></td>
+            </tr>
+          </table>
+        </div>
+
+
+        <div class="divOtherDisorder">
+          <p class="question">10. 고혈압, 당뇨, 고지혈증을 진단 받은 적이 있습니까?</p>
+          <label><input type="radio" name="rb_otherDisorder" value="0"> 예</label>
+          <label><input type="radio" name="rb_otherDisorder" value="1"> 아니오</label>
+        </div>
+
+    </div>
+
+
+    <div class="divHeadache">
+
+      <h4 class="smallTitle">두 통 문 진 표</h4>
+
+
+      <div class="divHeadacheType">
+        <p class="question">1. 두통의 양상</p>
+        <table>
+          <tr>
+            <td><label><input type="radio" name="rb_headacheType" value="0"> 이번이 처음이다</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="radio" name="rb_headacheType" value="1"> 예전부터 한번 씩 아팠다</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="radio" name="rb_headacheType" value="2"> 한번씩 두통이 있었지만 이전과는 다른 양상이다</label></td>
+          </tr>
+        </table>
+      </div>
+
+
+      <div class="divHeadacheFirst">
+        <p class="question">2. 두통을 처음 느낄 때 순간적으로 아프기 시작했습니까? 천천히 아파오더니 심해졌습니까?</p>
+        <label><input type="radio" name="rb_headacheFirst" value="0"> 순간적으로</label>
+        <label><input type="radio" name="rb_headacheFirst" value="1"> 천천히</label>
+      </div>
+
+
+      <div class="divHeadacheDur">
+        <p class="question">3. 두통을 느낄 때 지속시간은 얼마정도입니까?</p>
+        <table>
+          <tr>
+            <td><label><input type="radio" name="rb_headacheDur" value="0">수초 간(순간적으로)</label></td>
+            <td><label><input type="radio" name="rb_headacheDur" value="1">수분에서 수십 분</label></td>
+            <td><label><input type="radio" name="rb_headacheDur" value="2">수시간</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="radio" name="rb_headacheDur" value="3">하루 종일</label></td>
+            <td><label><input type="radio" name="rb_headacheDur" value="4">수일간(3일내)</label></td>
+            <td><label><input type="radio" name="rb_headacheDur" value="5">3일 이상</label></td>
+          </tr>
+        </table>
+      </div>
+
+
+      <div class="divHeadacheFreq">
+        <p class="question">4. 두통은 얼마나 자주 아픕니까?</p>
+        <table>
+          <tr>
+            <td><label><input type="radio" name="rb_headacheFreq" value="0">하루에도 수차례씩</label></td>
+            <td><label><input type="radio" name="rb_headacheFreq" value="1">하루에 한번(종일)</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="radio" name="rb_headacheFreq" value="2">일주일에 몇 번</label></td>
+            <td><label><input type="radio" name="rb_headacheFreq" value="3">한 달에 몇 번</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="radio" name="rb_headacheFreq" value="4">일 년에 몇 번</label></td>
+            <td><label><input type="radio" name="rb_headacheFreq" value="5" id="rb_headacheFreqOther">그 외 <input type="text" id="txt_headacheFreqOther" name="txt_headacheFreqOther" disabled></label></td>
+          </tr>
+        </table>
+      </div>
+
+
+      <div class="divHeadacheSituation">
+        <p class="question">5. 두통을 잘 유발하는 상황에는 어떤 것들이 있나요?</p>
+        <table>
+          <tr>
+            <td><label><input type="checkbox" name="cb_hSituation" value="0"> 불면</label></td>
+            <td><label><input type="checkbox" name="cb_hSituation" value="1"> 음주</label></td>
+            <td><label><input type="checkbox" name="cb_hSituation" value="2"> 감기</label></td>
+            <td><label><input type="checkbox" name="cb_hSituation" value="3"> 스트레스</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox" name="cb_hSituation" value="4"> 월경</label></td>
+            <td><label><input type="checkbox" name="cb_hSituation" value="5"> 특정 냄새</label></td>
+            <td><label><input type="checkbox" name="cb_hSituation" value="6" id="cb_hSituationOther"> 그 외 :</label></td>
+            <td><input type="text" id="txt_hSituationOther" disabled></td>
+          </tr>
+        </table>
+      </div>
+
+
+      <div class="divHeadachePart">
+        <p class="question">6. 두통 발생 시 머리 어느 쪽이 아픈가요?</p>
+        <table>
+          <tr>
+            <td><label><input type="radio" name="rb_hPart" value="0"> 주로 한쪽이 아프다</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="radio" name="rb_hPart" value="1"> 양옆이 다 아프거나 전체적으로 아프다</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="radio" name="rb_hPart" value="2"> 한쪽이 아플때도 있고 양옆이 아플때도 있다</label></td>
+          </tr>
+        </table>
+      </div>
+
+
+      <div class="divHeadacheSymtom">
+
+        <p class="question">7. 두통의 증상은 어떤가요?</p>
+        <table>
+          <tr>
+            <td><label><input type="checkbox" name="cb_hSymtom" value="0"> 우리하다</label></td>
+            <td><label><input type="checkbox" name="cb_hSymtom" value="1"> 조이는 느낌이 든다</label></td>
+            <td><label><input type="checkbox" name="cb_hSymtom" value="2"> 멍하다</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox" name="cb_hSymtom" value="3"> 땡긴다</label></td>
+            <td><label><input type="checkbox" name="cb_hSymtom" value="4"> 맑지않다</label></td>
+            <td><label><input type="checkbox" name="cb_hSymtom" value="5"> 꽉꽉 찌른다</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox" name="cb_hSymtom" value="6"> 무겁다</label></td>
+            <td><label><input type="checkbox" name="cb_hSymtom" value="7"> 욱씬거린다</label></td>
+            <td><label><input type="checkbox" name="cb_hSymtom" value="8"> 터질 것 같다</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox" name="cb_hSymtom" value="9"> 망치로 때리는 느낌</label></td>
+            <td><label><input type="checkbox" name="cb_hSymtom" value="10"> 심장박동에 따라 머리가 두근거린다</label></td>
+            <td><label><input type="checkbox" name="cb_hSymtom" value="11"> 전기에 쏘이는 것처럼 깜짝 놀란다</label></td>
+          </tr>
+          <tr>
+            <td colspan="3">
+              <label>
+                <input type="checkbox" name="cb_hSymtom" value="12" id="cb_hSymtomOther"> 그 외 :
+              </label>
+              <input type="text" id="txt_hSymtomOther" disabled>
+            </td>
+          </tr>
+        </table>
+
+      </div>
+
+
+      <div class="divHeadacheIntensity">
+        <p class="question">8. 두통의 정도는 전혀 아프지 않을 때가 0, 곧 죽을 만큼 심한 것을 10이라고 할 때 <br> 0에서 10사이에서 어느 정도 인가요?</p>
+        <input type="text" name="txt_headIntensity">
+      </div>
+
+
+      <div class="divHeadacheYN">
+        <p class="question">9. 두통관련 질문</p>
+
+        <div class="divHeadacheMove">
+          <p class="question">9-1) 머리가 아플 때 움직이거나 활동을 하면 두통이 심해지나요?</p>
+          <label><input type="radio" name="rb_headacheMove" value="0"> 예</label>
+          <label><input type="radio" name="rb_headacheMove" value="1"> 아니오</label>
+        </div>
+
+        <div class="divHeadacheLie">
+          <p class="question">9-2)두통이 있을때는 가만히 누워있는 편인가요?</p>
+          <label><input type="radio" name="rb_headacheLie" value="0"> 예</label>
+          <label><input type="radio" name="rb_headacheLie" value="1"> 아니요</label>
+        </div>
+
+        <div class="divHeadacheKeen">
+          <p class="question">9-3) 머리가 아플 때 주위가 환하게 밝거나 시끄러우면 예민해지고 짜증이 날 때가 있나요?</p>
+          <label><input type="radio" name="rb_headacheKeen" value="0"> 예</label>
+          <label><input type="radio" name="rb_headacheKeen" value="1"> 아니요</label>
+        </div>
+
+        <div class="divHeadacheShoulder">
+          <p class="question">9-4) 평소 뒷목이나 어깨가 아프거나 당긴 적이 있나요?</p>
+          <label><input type="radio" name="rb_shoulderache" value="0"> 예</label>
+          <label><input type="radio" name="rb_shoulderache" value="1"> 아니요</label>
+        </div>
+        <div class="divHeadacheFam">
+          <p class="question">9-5) 가족중에도 두통이 자주 있는 사람이 있나요?</p>
+          <label><input type="radio" name="rb_headacheFam" value="0"> 예</label>
+          <label><input type="radio" name="rb_headacheFam" value="1"> 아니요</label>
+        </div>
+
+      </div>
+
+
+      <div class="divHeadacheWith">
+        <p class="question">10. 두통과 함께 동반되는 증상이 있나요?</p>
+        <p style="margin:0; padding:0;">
+          <label><input type="radio"name="rb_headWith" value="0"> 있다</label>
+          <label><input type="radio"name="rb_headWith" value="1"> 없다</label>
+        </p>
+        <table>
+          <tr>
+            <td><label><input type="checkbox"name="cb_headWith" value="0" disabled> 어지럼증</label></td>
+            <td><label><input type="checkbox"name="cb_headWith" value="1" disabled> 오심, 구토</label></td>
+            <td><label><input type="checkbox"name="cb_headWith" value="2" disabled> 물체가 흐리게 보인다</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox"name="cb_headWith" value="3" disabled> 한쪽 다리가 저린다</label></td>
+            <td><label><input type="checkbox"name="cb_headWith" value="4" disabled> 눈이 침침하다</label></td>
+            <td><label><input type="checkbox"name="cb_headWith" value="5" disabled> 한쪽 팔 다리 마비가 있다</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox"name="cb_headWith" value="6" disabled> 의식이 흐려진다</label></td>
+            <td><label><input type="checkbox"name="cb_headWith" value="7" disabled> 물체가 둘로 보인다</label></td>
+            <td><label><input type="checkbox"name="cb_headWith" value="8" disabled> 팔다리가 자기 마음대로 움직인다</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox"name="cb_headWith" value="9" disabled> 기억장애</label></td>
+            <td><label><input type="checkbox"name="cb_headWith" value="10" disabled> 말이 어눌하다</label></td>
+            <td><label><input type="checkbox"name="cb_headWith" value="11" disabled> 보행장애(걸으면 비틀거리거나 걷기 힘들다)</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox"name="cb_headWith" value="12" disabled> 경기를 한다</label></td>
+            <td><label><input type="checkbox"name="cb_headWith" value="13" disabled> 음식을 삼키기 곤란하다</label></td>
+            <td><label><input type="checkbox"name="cb_headWith" value="14" disabled> 얼굴이나 입 주위가 저린다</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox"name="cb_headWith" value="15" disabled> 청각장애</label></td>
+            <td><label><input type="checkbox"name="cb_headWith" value="16" disabled> 귀에서 진물이 난다</label></td>
+            <td><label><input type="checkbox"name="cb_headWith" value="17" disabled> 귀안에 뭔가 가득찬 느낌이다</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox"name="cb_headWith" value="18" disabled> 소리에 민감하다</label></td>
+            <td><label><input type="checkbox"name="cb_headWith" value="19" disabled> 소리가 이상하게 들린다</label></td>
+            <td><label><input type="checkbox"name="cb_headWith" value="20" disabled> 이명(귀에 소리가 난다)</label></td>
+          </tr>
+          <tr>
+            <td><label><input type="checkbox"name="cb_headWith" id="cb_headWithOther" value="21" disabled> 그 외</label></td>
+            <td colspan="2"><input type="text" id="txt_headWithOther" disabled></td>
+          </tr>
+        </table>
+      </div>
+
+
+      <div class="divHeadacheOtherSymtom">
+        <p class="question">11. 두통이 있기 직전이나 시작과 함께 이상한 증상이 있은 적이 있나요?</p>
+        <table>
+          <tr>
+            <td>
+              <label>
+                <input type="radio" name="rb_headOtherSymtom" value="0"> 예
+              </label>
+              <input type="text" name="txt_headOtherSymtom" id="txt_headOtherSymtom" placeholder="예: 눈앞이 번쩍거린다" size="30" disabled>
+            </td>
+          </tr>
+          <tr>
+            <td><label><input type="radio" name="rb_headOtherSymtom" value="1"> 아니오</label></td>
+          </tr>
+        </table>
+
+        <p class="question">11-1)있다면 지속시간은 얼마 정도인가요?</p>
+        <label><input type="radio" name="rb_otherDuration" value="0" disabled> 10분 이내</label>
+        <label><input type="radio" name="rb_otherDuration" value="1" disabled> 한시간 이내</label>
+        <label><input type="radio" name="rb_otherDuration" value="2" disabled> 한시간 이상</label>
+      </div>
+
+
+      <h4 class="smallTitle">공통 질문 사항</h4>
+
+      <div class="divOtherDrugs">
+        <p class="question">그 외 복용하는 약물이나 병력이 있습니까?</p>
+        <table>
+          <tr>
+            <td>
+              <label><input type="radio" name="rb_other_drug" value="0" id="rb_otherDrug"> 예</label>
+              <input type="text" name="txt_otherDrug" id="txtOtherDrug" placeholder="상세히 적어주세요." disabled>
+            </td>
+          </tr>
+          <tr>
+            <td><label><input type="radio" name="rb_other_drug" value="1"> 아니오</label></td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+
     <br>
     <button class="btn btn-default">저장</button>
     </div>
+
+  <script src="../js/Munjinpyo_script.js"></script>
+
 </body>
 </html>
