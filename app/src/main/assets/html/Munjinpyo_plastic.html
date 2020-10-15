@@ -9,46 +9,103 @@
     <title>성형외과</title>
 </head>
 <body>
+
+    <!-- Header -->
+    <div id="header">성형외과 문진표</div>
+
     <div class="container">
-    1. 처음 방문이십니까?
-    <input type="radio">예
-    <input type="radio">아니오
-    <br>
-    2. 현재 복용하는 약이 있습니까?
-    <input type="radio">예
-    <input type="radio">아니오
-    <br>
-    3. 아픈 부위는?
-    <input type="checkbox">눈
-    <input type="checkbox">코
-    <input type="checkbox">입
-    <input type="checkbox">귀
-    <input type="checkbox">혀
-    <input type="checkbox">그 외 <input type="text">
-    <br>
-    4. 아픈 경로는?
-    <input type="checkbox">넘어짐
-    <input type="checkbox">떨어짐
-    <input type="checkbox">부딪힘
-    <input type="checkbox">구타
-    <input type="checkbox">그 외 <input type="text">
-    <br>
-    5. 이전에 얼굴부위에 다친 적이 있습니까?
-    <input type="radio"> 예
-    <input type="radio">아니오
-    <br>
-    6. 언제 다치셨나요?
-    <input type="radio">당일
-    <input type="radio">전날
-    <input type="radio">일주일이내
-    <input type="radio">한달이내
-    <input type="radio">그 외 <input type="text">
-    <br>
-    7. 이전에 CT를 찍은 적이 있나요?
-    <input type="radio">예
-    <input type="radio">아니오
-    <br>
-    <button class="btn btn-default">저장</button>
+
+      <form action="Munjin_3_pyo.html" method="post">
+
+        <div class="divVisited">
+          <p class="question">1. 처음 방문이십니까?</p>
+          <label><input type="radio" name="rb_visited" value="0"> 예</label>
+          <label><input type="radio" name="rb_visited" value="1"> 아니오</label>
+        </div>
+
+        <div class="divOtherDrug">
+          <p class="question">2. 현재 복용하는 약이 있습니까?</p>
+          <table>
+            <tr>
+              <td>
+                <label><input type="radio" name="rb_other_drug" value="0"> 예 </label>
+                <input type="text" name="txt_other_drug" id="txtOtherDrug" placeholder="약품명" size="30" disabled>
+              </td>
+            </tr>
+            <tr>
+              <td><label><input type="radio" name="rb_other_drug" value="1"> 아니오</label></td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="divPainPoint">
+          <p class="question">3. 아픈 부위는?</p>
+          <table>
+            <tr>
+              <td><label><input type="checkbox" name="cb_painPoint" value="0">눈</label></td>
+              <td><label><input type="checkbox" name="cb_painPoint" value="1">코</label></td>
+              <td><label><input type="checkbox" name="cb_painPoint" value="2">입</label></td>
+            </tr>
+            <tr>
+              <td><label><input type="checkbox" name="cb_painPoint" value="3">귀</label></td>
+              <td><label><input type="checkbox" name="cb_painPoint" value="4">혀</label></td>
+              <td>
+                <label><input type="checkbox" name="cb_painPoint" value="5" id="cbPainPointOther">그 외</label>
+                <input type="text" id="txtPainPointOther" disabled>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+
+        <div class="divPainCause">
+          <p class="question">4. 아픈 경로는?</p>
+          <table>
+            <tr>
+              <td><label><input type="checkbox" name="cb_painCause" value="0">넘어짐</label></td>
+              <td><label><input type="checkbox" name="cb_painCause" value="1">떨어짐</label></td>
+              <td><label><input type="checkbox" name="cb_painCause" value="2">부딪힘</label></td>
+            </tr>
+            <tr>
+              <td><label><input type="checkbox" name="cb_painCause" value="3">구타</label></td>
+              <td>
+                <label>
+                  <input type="checkbox" name="cb_painCause" value="4" id="cb_painCauseOther">그 외
+                </label>
+              </td>
+              <td><input type="text" id="txt_painCauseOther" disabled></td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="divFaceHurt">
+          <p class="question">5. 이전에 얼굴부위를 다친 적이 있습니까?</p>
+          <label><input type="radio" name="rb_faceHurt" value="0"> 예</label>
+          <label><input type="radio" name="rb_faceHurt" value="1"> 아니오</label>
+        </div>
+
+        <div class="divPainWhen">
+          <p class="question">6. 언제 다치셨나요?</p>
+          <label><input type="radio" name="rb_painWhen" value="0"> 당일</label>
+          <label><input type="radio" name="rb_painWhen" value="1"> 전날</label>
+          <label><input type="radio" name="rb_painWhen" value="2"> 일주일이내</label>
+          <label><input type="radio" name="rb_painWhen" value="3"> 한 달 이내</label>
+          <label><input type="radio" name="rb_painWhen" value="4"> 한 달 이전</label>
+        </div>
+
+        <div class="divCTExp">
+          <p class="question">7. 이전에 CT를 찍은 적이 있나요?</p>
+          <label><input type="radio" name="rb_CTExp" value="0"> 예</label>
+          <label><input type="radio" name="rb_CTExp" value="1"> 아니오</label>
+        </div>
+
+        <button class="btn btn-default" type="submit">저장</button>
+
+      </form>
+
     </div>
+
+    <script src="../js/Munjinpyo_script.js"></script>
+
 </body>
 </html>

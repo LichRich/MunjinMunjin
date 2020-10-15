@@ -354,6 +354,19 @@ for (let i = 0; i < rbHOSymtom.length; i++) {
 
 /************************* PLASTIC ************************/
 
+const cbPainCause = document.getElementById("cb_painCauseOther");
+const txtPainCause = document.getElementById("txt_painCauseOther");
+try {
+  cbPainCause.onchange = function() {
+    if (cbPainCause.checked)
+      txtPainCause.disabled = false;
+    else
+      txtPainCause.disabled = true;
+  }
+} catch(e) {
+
+}
+
 /************************* SKIN ************************/
 
 const rbTerms = document.getElementsByName("rb_pain_exp");
