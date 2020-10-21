@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" charset="utf-8">
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.5.0/jquery.serialize-object.min.js" integrity="sha512-Gn0tSSjkIGAkaZQWjx3Ctl/0dVJuTmjW/f9QyB302kFjU4uTNP4HtA32U2qXs/TRlEsK5CoEqMEMs7LnzLOBsA==" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../css/Munjinpyo_style.css">
+  <script src="js/Munjinpyo_script.js"></script>
+
+  <title>피부과</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <div id="header">피부과 문진표</div>
+
+  <!-- Container -->
+  <div class="container">
+
+    <form action="Munjin_3_pyo.html" method="post">
+
+      <div id="divSkinPainPoint">
+        <p class="question">1. 어떻게 불편하십니까?</p>
+        <table>
+          <tr>
+            <td><label><input name="cb_pain_point[]" type="checkbox" value="itch"> 가려움 </label></td>
+            <td><label><input name="cb_pain_point[]" type="checkbox" value="rash"> 발진 </label></td>
+            <td><label><input name="cb_pain_point[]" type="checkbox" value="bubble"> 수포 </label></td>
+            <td><label><input name="cb_pain_point[]" type="checkbox" value="urticaria"> 두드러기 </label></td>
+          </tr>
+          <tr>
+            <td><label><input name="cb_pain_point[]" type="checkbox" value="peel"> 피부벗겨짐 </label></td>
+            <td><label><input name="cb_pain_point[]" type="checkbox" value="agony"> 통증</label></td>
+            <td><label><input id="cbPainPointOther" name="cb_pain_point[]" type="checkbox" value="other"> 기타</label></td>
+            <td><input id="txtPainPointOther" name="txt_pain_point_other" type="text" disabled></td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="divSkinPainSince">
+        <p class="question">2. 언제부터 증상이 발상하였습니까?</p>
+        <table>
+          <tr>
+            <td><label><input name="rb_pain_since" type="radio" value="0"> 당일</label></td>
+            <td><label><input name="rb_pain_since" type="radio" value="1"> 7일전</label></td>
+            <td><label><input name="rb_pain_since" type="radio" value="2"> 15일전</label></td>
+            <td><label><input name="rb_pain_since" type="radio" value="3"> 30일전</label></td>
+          </tr>
+          <tr>
+            <td><label><input name="rb_pain_since" type="radio" value="4"> 3개월전</label></td>
+            <td><label><input name="rb_pain_since" type="radio" value="5"> 6개월전</label></td>
+            <td colspan="2"><label><input name="rb_pain_since" type="radio" value="6"> 1년이상</label></td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="divPainTerm">
+        <p class="question">3. 증상으로 인해 치료 받으신 기왕력 및 기간</p>
+        <p style="margin:0;"><label><input name="rb_pain_exp" type="radio" value="0"> 있음</label>
+          <input id="txtPainTerm" name="txt_pain_term" type="text" disabled></p>
+        <label><input name="rb_pain_exp" type="radio" value="1"> 없음</label>
+      </div>
+
+      <div id="divOtherDrugs">
+        <p class="question">4. 3개월동안 복용하신 약물이 있으십니까?</p>
+        <p style="margin:0;"><label><input name="rb_other_drug" type="radio" value="0"> 예</label> <input
+            id="txtOtherDrug" name="txt_other_drug" type="text" placeholder="약품명" disabled></p>
+        <label><input name="rb_other_drug" type="radio" value="1"> 아니오</label>
+      </div>
+
+      <div id="divWorstPoint">
+        <p class="question">5. 가장 불편하신 곳은 어디입니까? <input id="txtWorstPoint" type="text" name="worst_point"> </p>
+      </div>
+
+      <div id="imgCheckPoint">
+        <p class="question">6. 불편한 곳을 표시하십시오.</p>
+        ((신체 그림))
+      </div>
+    </form>
+    <button class="btn btn-default" type="submit" onClick="hi()">저장</button>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+  <script>
+    // TODO: Replace the following with your app's Firebase project configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBWCGyjxtDL7smhVRkraxI-6EDGZuIGPvE",
+      authDomain: "munjinmunjin-75fc5.firebaseapp.com",
+      databaseURL: "https://munjinmunjin-75fc5.firebaseio.com",
+      projectId: "munjinmunjin-75fc5",
+      storageBucket: "munjinmunjin-75fc5.appspot.com",
+      messagingSenderId: "452765368961",
+      appId: "1:452765368961:web:8e7510b77ff4e7c8b18380"
+    }
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig)
+    var db = firebase.firestore();
+    var formSerializeArray;
+    function hi() {
+      formSerializeArray = $('form').serializeObject()
+      console.log(formSerializeArray)
+        dateFunc()
+    }
+    function dateFunc() {
+      db.collection("users").add(formSerializeArray)
+        .then(function (docRef) {
+          console.log("Document written with ID: ", docRef.id);
+        })
+        .catch(function (error) {
+          console.error("Error adding document: ", error);
+        });
+    }
+
+  </script>
+</body>
+
+</html>
