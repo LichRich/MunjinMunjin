@@ -4,14 +4,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="content-type" charset="utf-8">
-  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-    crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.5.0/jquery.serialize-object.min.js" integrity="sha512-Gn0tSSjkIGAkaZQWjx3Ctl/0dVJuTmjW/f9QyB302kFjU4uTNP4HtA32U2qXs/TRlEsK5CoEqMEMs7LnzLOBsA==" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="../css/Munjinpyo_style.css">
-  <script src="js/Munjinpyo_script.js"></script>
-
   <title>피부과</title>
 </head>
 
@@ -82,44 +75,9 @@
         ((신체 그림))
       </div>
     </form>
-    <button class="btn btn-default" type="submit" onClick="hi()">저장</button>
+    <button class="btn btn-default" type="submit" id="btn_submit">저장</button>
   </div>
-  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
-
-  <!-- Add Firebase products that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
-  <script>
-    // TODO: Replace the following with your app's Firebase project configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyBWCGyjxtDL7smhVRkraxI-6EDGZuIGPvE",
-      authDomain: "munjinmunjin-75fc5.firebaseapp.com",
-      databaseURL: "https://munjinmunjin-75fc5.firebaseio.com",
-      projectId: "munjinmunjin-75fc5",
-      storageBucket: "munjinmunjin-75fc5.appspot.com",
-      messagingSenderId: "452765368961",
-      appId: "1:452765368961:web:8e7510b77ff4e7c8b18380"
-    }
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig)
-    var db = firebase.firestore();
-    var formSerializeArray;
-    function hi() {
-      formSerializeArray = $('form').serializeObject()
-      console.log(formSerializeArray)
-        dateFunc()
-    }
-    function dateFunc() {
-      db.collection("users").add(formSerializeArray)
-        .then(function (docRef) {
-          console.log("Document written with ID: ", docRef.id);
-        })
-        .catch(function (error) {
-          console.error("Error adding document: ", error);
-        });
-    }
-
-  </script>
+  <script src="./bundle.js"></script>
 </body>
 
 </html>
