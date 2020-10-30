@@ -2,14 +2,16 @@ var firebase = require("firebase");
 require("firebase/auth");
 require("firebase/firestore");
 require("firebase/database");
-require("jquery")
-require("form-serializer")
-require('./scss/index.scss');
+require("jquery");
+require("form-serializer");
+
 var firebaseEmailAuth;
 var firebaseDatabase;
 var db;
 var formSerializeArray;
-// Your web app's Firebase configuration
+var isAdduser = false;
+
+// 파이어베이스 초기화
 var firebaseConfig = {
   apiKey: "AIzaSyBWCGyjxtDL7smhVRkraxI-6EDGZuIGPvE",
   authDomain: "munjinmunjin-75fc5.firebaseapp.com",
@@ -23,14 +25,14 @@ firebase.initializeApp(firebaseConfig);
 
 firebaseEmailAuth = firebase.auth();
 firebaseDatabase = firebase.database();
+db = firebase.firestore();
 
+//로그인 구현
 var index = document.getElementById("btn_login");
 if (index) {
   index.onclick = function () {
     var id = document.getElementById("user_id").value;
     var password = document.getElementById("user_pw").value;
-    alert("로그인 버튼 눌렸음" + id + ":" + password);
-
     //파이어베이스 이메일 로그인 함수
     firebaseEmailAuth
       .signInWithEmailAndPassword(id, password)
@@ -45,9 +47,10 @@ if (index) {
       });
   };
 }
+
 //로그인 성공했을 때
 function loginSuccess(firebaseUser) {
-  alert("로그인 성공");
+  alert("안냐세요");
   //로그인 성공한 유저 id 확인해 보기 - firebase database에 접근해서 데이터 조회 하는 함수
   firebaseDatabase
     .ref("users/" + firebaseUser.uid)
@@ -57,7 +60,7 @@ function loginSuccess(firebaseUser) {
   window.location.href = "/Munjin_1_main.html";
 }
 
-db = firebase.firestore();
+// 제출 구현
 var skinbtn = document.getElementById("btn_submit");
 if (skinbtn) {
   skinbtn.onclick = function () {
@@ -65,7 +68,9 @@ if (skinbtn) {
     console.log(formSerializeArray);
     dateFunc();
   };
+} else {
 }
+
 function dateFunc() {
   db.collection("users")
     .add(formSerializeArray)
@@ -75,4 +80,42 @@ function dateFunc() {
     .catch(function (error) {
       console.error("Error adding document: ", error);
     });
+}
+
+// 회원가입 구현
+var joinUs = document.getElementById("btn_join");
+if (joinUs) {
+  joinUs.onclick = function () {
+    var email = document.getElementById("join_email").value;
+    var password = document.getElementById("join_pw").value;
+    isAdduser = true;
+    firebaseEmailAuth
+      .createUserWithEmailAndPassword(email, password)
+      .catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        if (errorCode === "auth/wrong-password") {
+          alert("Wrong password.");
+        } else {
+          alert(errorMessage);
+        }
+        isAdduser = false;
+      });
+  };
+  initApp();
+}
+
+function initApp() {
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user && isAdduser) {
+      var ref = firebaseDatabase.ref("users/" + user.uid); //저장될 곳을 users라는 부모 키를 레퍼런스로 지정.
+      var name = document.getElementById("join_name").value;
+      //저장 형식
+      var obj = { name: name };
+      ref.set(obj); // 고유한 자식 키가 하나 생셩이 되면서 json 삽입
+      alert("가입 성공!");
+    } else {
+    }
+  });
 }
