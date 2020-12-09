@@ -1,22 +1,43 @@
 <!DOCTYPE html>
 <html lang="ko" dir="ltr">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="content-type" charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/Munjin_style.css">
-    <title>문진표 화면</title>
-  </head>
-  <body>
-    <div id="header">문진표</div>
 
-    <div class="pyo">
-      <tr><td>아픈 곳: 없음</td></tr>
-      <tr><td>증상: 튼튼</td></tr>
-    </div>
-    <button id="btn_addQ" onClick="location.href='Munjin_4_addQ.html'">진단을 위한 추가 설문</button>
-    <footer>
-    </footer>
-  </body>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" charset="utf-8">
+  <title>문진표 화면</title>
+  <script src="./bundle.js"></script>
+  <link rel="stylesheet" href="../css/Munjin_style.css">
+  
+</head>
+
+<body>
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+    var arrayedQ = [];
+    for(var i = 0; i<sessionStorage.length; i++) {
+      arrayedQ.push(sessionStorage.key(i));
+      arrayedQ.sort();
+    }
+
+   // getItem
+    var output = "";
+    for(var i = 0; i< arrayedQ.length; i++) {
+      output += "<tr><td>"; 
+      output += arrayedQ[i] + " : " + sessionStorage.getItem(arrayedQ[i]);
+      output += "</td></tr>";
+    }
+    document.getElementById("pyo").innerHTML = output;
+  })
+  </script>
+
+  <div id="header">문진표</div>
+  <div>
+    <table id="pyo">
+     </table>
+  </div>
+  <button id="btn_addQ" onClick="location.href='Munjin_4_addQ.html'">진단을 위한 추가 설문</button>
+  <footer>
+  </footer>
+  
+</body>
 </html>
