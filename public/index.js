@@ -9,6 +9,7 @@ var firebaseEmailAuth;
 var firebaseDatabase;
 var db;
 var formSerializeArray;
+var new_value;
 var isAdduser = false;
 
 // 파이어베이스 초기화
@@ -66,21 +67,40 @@ function loginSuccess(firebaseUser) {
 var skinbtn = document.getElementById("btn_submit");
 if (skinbtn) {
   skinbtn.onclick = function () {
-   formSerializeArray = $("form").serializeObject();
-    check2();
-   saveToDB();
+    formSerializeArray = $("form").serializeObject();
     setData();
   }
 }
 
-function check2() {
-  if ($('#checkbox1').prop("checked"))
-var name1 = $("#checkbox1").val();
-if ($('#checkbox2').prop("checked"))
-var name2 = $("#checkbox2").val();
+//확인 후 데이터 DB에 저장하기
+var addQbtn = document.getElementById("btn_addQ");
+if (addQbtn) {
+  addQbtn.onclick = function () {
+    formSerializeArray[obj_key] = new_value;
+    saveToDB();
+  }
 }
 
+// (질문,값) 세션에 저장하기
+function setData() {
+  sessionStorage.clear();
+  var questions = document.getElementsByClassName("question");
 
+  for (var i = 0; i < questions.length; i++) {
+    var obj_key = Object.keys(formSerializeArray)[i]; //key를구하고
+    var obj_value = formSerializeArray[obj_key]; //key를 활용하여 value값을 구한다.
+    alert(obj_key+"..."+new_value);
+    if(Array.isArray(obj_value)) {
+      new_value = obj_value.filter(function(a){return a !== "isNull"})
+    }
+    else {
+      new_value = obj_value;
+    }
+    sessionStorage.setItem(questions[i].innerHTML, new_value);
+    
+    window.location.href = "/Munjin_3_pyo.html";
+  }
+}
 
 //Database에 값 넣기
 function saveToDB() {
@@ -89,24 +109,10 @@ function saveToDB() {
   if (user != null) email = user.email;
   db.collection(email).add(formSerializeArray).then(function() {
     alert("저장되었습니다!ㅎㅅㅎ");
-    window.location.href = "/Munjin_3_pyo.html";
 }).catch(function() {
     alert("에러가 발생했습니다, 다시 시도해주세요");
   })
 }
-
-// (질문,값) 저장하기
-function setData() {
-  sessionStorage.clear();
-  var questions = document.getElementsByClassName("question");
-
-  for (var i = 0; i < questions.length; i++) {
-    var obj_key = Object.keys(formSerializeArray)[i]; //key를구하고
-    var obj_value = formSerializeArray[obj_key]; //key를 활용하여 value값을 구한다.
-    sessionStorage.setItem(questions[i].innerHTML, obj_value);
-  }
-}
-
 
 // 회원가입 구현
 var joinUs = document.getElementById("btn_join");

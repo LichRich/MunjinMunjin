@@ -140,7 +140,7 @@ try {
 
 try {
   const cbSchizo = document.getElementById("cb_schizo");
-  const schizoSymtoms = document.getElementsByName("cb_schizo");
+  const schizoSymtoms = document.getElementsByName("cb_schizo[]");
   cbSchizo.onchange = function () {
     if (cbSchizo.checked) {
       for (var i = 0; i < schizoSymtoms.length; i++)
@@ -368,14 +368,27 @@ try {
 }
 
 /************************* SKIN ************************/
+// const cbPoints = document.getElementById("cbPainPointOther")
+// cbPoints.onclick = function() {
+//   if(cbPoints.checked) {
+//    cbPoints.value = document.getElementById("txtPainPointOther").value;
+//    alert("체크돼씀")
+//   }
+//   else {
+//     cbPoints.value = "...?";
+//     alert("체크가 안돼써")
+//   }
+// }
 
 const rbTerms = document.getElementsByName("rb_pain_exp");
 for (let i = 0 ; i < rbTerms.length; i++){
   rbTerms[i].onclick = function () {
     if (rbTerms[0].checked) {
       document.getElementById("txtPainTerm").disabled = false;
+      // alert(document.getElementById("txtPainPointOther").value+"  체크0");
     } else if(rbTerms[1].checked) {
       document.getElementById("txtPainTerm").disabled = true;
+      // alert(document.getElementById("txtPainPointOther").value+"  체크ㄴㄴ");
     }
   }
 }

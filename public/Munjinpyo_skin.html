@@ -29,8 +29,8 @@
           <tr>
             <td><label><input name="cb_pain_point[]" type="checkbox" value="피부벗겨짐"> 피부벗겨짐 </label></td>
             <td><label><input name="cb_pain_point[]" type="checkbox" value="통증"> 통증</label></td>
-            <td><label><input id="cbPainPointOther" name="cb_pain_point[]" type="checkbox" value="기타" class="cb">기타</label></td>
-            <td><input id="txtPainPointOther" name="txt_pain_point_other" type="text" disabled></td>
+            <td><label><input id="cbPainPointOther" name="cb_pain_point[]" type="checkbox" value="isNull">기타</label></td>
+            <td><input id="txtPainPointOther" name="cb_pain_point[]" type="text" disabled></td>
           </tr>
         </table>
       </div>
@@ -54,15 +54,15 @@
 
       <div id="divPainTerm">
         <p class="question">3. 증상으로 인해 치료 받으신 기왕력 및 기간</p>
-        <p style="margin:0;"><label><input name="rb_pain_exp" type="radio" value="있음"> 있음</label>
-          <input id="txtPainTerm" name="txt_pain_term" type="text" disabled></p>
+        <p style="margin:0;"><label><input name="rb_pain_exp" type="radio" value="isNull"> 있음</label>
+          <input id="txtPainTerm" name="rb_pain_exp" type="text" class="text" disabled></p>
         <label><input name="rb_pain_exp" type="radio" value="없음"> 없음</label>
       </div>
 
       <div id="divOtherDrugs">
         <p class="question">4. 3개월동안 복용하신 약물이 있으십니까?</p>
-        <p style="margin:0;"><label><input name="rb_other_drug" type="radio" value="예"> 예</label> <input
-            id="txtOtherDrug" name="txt_other_drug" type="text" placeholder="약품명" disabled></p>
+        <p style="margin:0;"><label><input name="rb_other_drug" type="radio" value="예/"> 예</label> <input
+            id="txtOtherDrug" name="rb_other_drug" type="text" placeholder="약품명" disabled></p>
         <label><input name="rb_other_drug" type="radio" value="아니오"> 아니오</label>
       </div>
 
