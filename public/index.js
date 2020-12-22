@@ -28,6 +28,9 @@ firebaseEmailAuth = firebase.auth();
 firebaseDatabase = firebase.database();
 db = firebase.firestore();
 
+//firestore document에서 사용하는 id값 임의 생성
+var docID = db.collection(" ").doc().id;
+
 //로그인 구현
 var index = document.getElementById("btn_login");
 if (index) {
@@ -61,58 +64,103 @@ function loginSuccess(firebaseUser) {
   window.location.href = "/Munjin_1_main.html";
 }
 
-
-
 // 제출 구현
 var skinbtn = document.getElementById("btn_submit");
 if (skinbtn) {
   skinbtn.onclick = function () {
+    alert("test");
     formSerializeArray = $("form").serializeObject();
     setData();
-  }
+    saveToDB();
+  };
 }
 
-//확인 후 데이터 DB에 저장하기
+//확인 후 다음 페이지로 넘어가기
 var addQbtn = document.getElementById("btn_addQ");
 if (addQbtn) {
   addQbtn.onclick = function () {
-    formSerializeArray[obj_key] = new_value;
-    saveToDB();
+    window.location.href = "/Munjin_4_addQ.html";
+  };
+}
+
+//이전 페이지로 돌아가기 + 저장했던 DB 삭제
+var before = document.getElementById("historyBack");
+if (before) {
+  before.onclick = function () {
+    var user = firebase.auth().currentUser;
+    var email;
+    if (user != null) {
+      email = user.email;
+    }
+
+    db.collection(email)
+      .doc(sessionStorage.getItem("0"))
+      .delete()
+      .then(function() {
+        var url = document.referrer;
+        if (url != null) {
+          window.location.href = url;
+          sessionStorage.clear();
+        } else {
+          alert("진료과목 선택 페이지로 돌아갑니다.");
+          window.location.href = "/Munjin_2_choice.html";
+          sessionStorage.clear();
+        }
+      })
+      .catch(function (error) {
+        console.error("Error removing document: ", error);
+      });
   }
 }
 
 // (질문,값) 세션에 저장하기
 function setData() {
   sessionStorage.clear();
+  sessionStorage.setItem("0", docID);
   var questions = document.getElementsByClassName("question");
 
   for (var i = 0; i < questions.length; i++) {
-    var obj_key = Object.keys(formSerializeArray)[i]; //key를구하고
-    var obj_value = formSerializeArray[obj_key]; //key를 활용하여 value값을 구한다.
-    alert(obj_key+"..."+new_value);
-    if(Array.isArray(obj_value)) {
-      new_value = obj_value.filter(function(a){return a !== "isNull"})
-    }
-    else {
+    var obj_key = Object.keys(formSerializeArray)[i]; //key를 구하고
+    var obj_value = formSerializeArray[obj_key]; //key를 활용하여 value를 구한다.
+    if (Array.isArray(obj_value)) {
+      new_value = obj_value.filter(function (a) {
+        return a !== "isNull";
+      });
+    } else {
       new_value = obj_value;
     }
     sessionStorage.setItem(questions[i].innerHTML, new_value);
-    
-    window.location.href = "/Munjin_3_pyo.html";
+    formSerializeArray[obj_key] = new_value;
   }
 }
 
-//Database에 값 넣기
+//Firestore에 값 넣기
 function saveToDB() {
   var user = firebase.auth().currentUser;
   var email;
   if (user != null) email = user.email;
-  db.collection(email).add(formSerializeArray).then(function() {
-    alert("저장되었습니다!ㅎㅅㅎ");
-}).catch(function() {
-    alert("에러가 발생했습니다, 다시 시도해주세요");
-  })
+
+  db.collection(email)
+    .doc(sessionStorage.getItem("0"))
+    .set(formSerializeArray)
+    .then(function () {
+      alert("저장되었습니다!ㅎㅅㅎ");
+      window.location.href = "/Munjin_3_pyo.html";
+    })
+    .catch(function () {
+      alert("에러가 발생했습니다, 다시 시도해주세요");
+    });
 }
+
+//writeDr 완료하기
+var btnDr = document.getElementById("btn_writeDr");
+if (btnDr) {
+  btnDr.onclick = function () {
+    alert("감사합니다 :)")
+    window.location.href = "/Munjin_1_main.html";
+  };
+}
+
 
 // 회원가입 구현
 var joinUs = document.getElementById("btn_join");

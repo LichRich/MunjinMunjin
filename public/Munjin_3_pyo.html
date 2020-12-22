@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="content-type" charset="utf-8">
   <title>문진표 화면</title>
-  <script src="./bundle.js"></script>
   <link rel="stylesheet" href="../css/Munjin_style.css">
   
 </head>
@@ -21,7 +20,7 @@
 
    // getItem
     var output = "";
-    for(var i = 0; i< arrayedQ.length; i++) {
+    for(var i = 1; i< arrayedQ.length; i++) {
       output += "<tr><td>"; 
       output += arrayedQ[i] + " : " + sessionStorage.getItem(arrayedQ[i]);
       output += "</td></tr>";
@@ -35,9 +34,10 @@
     <table id="pyo">
      </table>
   </div>
-  <button id="btn_addQ" onClick="location.href='Munjin_4_addQ.html'">진단을 위한 추가 설문</button>
+  <button id="historyBack">증상 수정하기</button>
+  <button id="btn_addQ">진단을 위한 추가 설문</button>
   <footer>
   </footer>
-  
+  <script src="./bundle.js"></script>
 </body>
 </html>

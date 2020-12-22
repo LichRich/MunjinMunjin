@@ -4,8 +4,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="content-type" charset="utf-8">
-  <script src="bundle.js"></script>
-    <link rel="stylesheet" href="../css/Munjin_style.css">
+  <link rel="stylesheet" href="../css/Munjin_style.css">
   <title>진단 결과작성(의사)</title>
 </head>
 
@@ -17,28 +16,30 @@
 
   <!-- Container -->
   <div class="container">
+    
+    <form action="Munjin_1_main.html" method="post">
 
-    <p id="writeDr_title">의사선생님이 입력해주세요! ( ღ’ᴗ’ღ )</p>
-    <table>
-      <tr>
-        <td><label>진단명: <input type="text"></label></td>
-      </tr>
-      <tr>
-        <td><label>약 처방 여부: O<input type="radio" name="takeM"> X<input type="radio" name="takeM"></label></td>
-      </tr>
-      <tr>
-        <td><label>약 복용 주기: <input type="text"></label></td>
-      </tr>
-      <tr>
-        <td><label>약 복용 기간: <input type="text"></label></td>
-      </tr>
-      <tr>
-        <td><label>특이 사항: <input type="text"></label></td>
-      </tr>
-      <tr>
-        <td><label><button onClick="location.href='./Munjin_1_main.html'">작성 완료</button></label></td>
-      </tr>
-    </table>
+      <p id="writeDr_title">의사선생님이 입력해주세요! ( ღ’ᴗ’ღ )</p>
+      <table>
+        <tr>
+          <td><label>진단명: <input type="text"></label></td>
+        </tr>
+        <tr>
+          <td><label>약 처방 여부: O<input type="radio" name="takeM"> X<input type="radio" name="takeM"></label></td>
+        </tr>
+        <tr>
+          <td><label>약 복용 주기: <input type="text"></label></td>
+        </tr>
+        <tr>
+          <td><label>약 복용 기간: <input type="text"></label></td>
+        </tr>
+        <tr>
+          <td><label>특이 사항: <input type="text"></label></td>
+        </tr>
+      </table>
+    </form>
+     <button id="btn_writeDr" >작성 완료</button>
   </div>
+  <script src="./bundle.js"></script>
 </body>
 </html>
