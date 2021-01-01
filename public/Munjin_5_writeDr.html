@@ -10,33 +10,23 @@
 
 <body>
   <!-- Header -->
-  <div id="header">
-    진단 결과 작성
-  </div>
+  <div id="header">진단 결과 작성</div>
 
   <!-- Container -->
   <div class="container">
     
-    <form action="Munjin_1_main.html" method="post">
-
+    <form>
       <p id="writeDr_title">의사선생님이 입력해주세요! ( ღ’ᴗ’ღ )</p>
-      <table>
-        <tr>
-          <td><label>진단명: <input type="text"></label></td>
-        </tr>
-        <tr>
-          <td><label>약 처방 여부: O<input type="radio" name="takeM"> X<input type="radio" name="takeM"></label></td>
-        </tr>
-        <tr>
-          <td><label>약 복용 주기: <input type="text"></label></td>
-        </tr>
-        <tr>
-          <td><label>약 복용 기간: <input type="text"></label></td>
-        </tr>
-        <tr>
-          <td><label>특이 사항: <input type="text"></label></td>
-        </tr>
-      </table>
+      
+          <p class="answer">진단명:</p><input type="text" name="diagnosis"></label>
+        
+          <p class="answer">약 처방 여부:</p> O<input type="radio" name="takeM"> X<input type="radio" name="takeM" value="X"></label>
+        
+          <p class="answer">약 복용 주기:</p> <input type="text" name="dosingCycle"></label>
+        
+          <p class="answer">약 복용 기간: </p> <input type="text" name="dosingPeriod"></label>
+        
+          <p class="answer">특이 사항:</p> <input type="text" name="specialMatter"></label>
     </form>
      <button id="btn_writeDr" >작성 완료</button>
   </div>

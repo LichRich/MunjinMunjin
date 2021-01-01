@@ -6,6 +6,7 @@
   "dependencies": {
     "@popperjs/core": "^2.5.3",
     "bootstrap": "^4.5.3",
+    "dayjs": "^1.9.7",
     "jquery": "^3.5.1",
     "js-cookie": "^2.2.1",
     "npx": "^10.2.2",

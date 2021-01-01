@@ -5,17 +5,19 @@
     <meta http-equiv="content-type" charset="utf-8">
     <title>Main</title>
     <link rel="stylesheet" href="../css/Munjin_style.css">
-    <script src="bundle.js"></script>
   </head>
   
   <body>
     <div class="container" >
-          <img src="../rabbit.jpeg" alt="logo" class="img-responsive center-block img-circle">
+          <img src="../rabbit.jpeg" alt="logo">
           <h1>문진문진</h1>
+          <div id="latest">현재 문진표 정보 확인하기</div>
           <div>
-          <button type="button" class="btn btn-default" onClick="location.href='Munjin_2_choice.html'">문진표 새로 작성하기</button>
-          <button type="button" class="btn btn-default" onClick="location.href='Munjin_6_history.html'">지난 문진표 조회하기</button>
+          <button type="button" class="btn btn-default" onClick="location.href='Munjin_2_choice.html'">새 문진표 작성하기</button>
+          <button type="button" class="btn btn-default" onClick="location.href='Munjin_4_addQ.html'">현재 문진표에 진단결과 추가하기 </button>
+          <button type="button" class="btn btn-default" onClick="location.href='Munjin_6_history.html'">진료기록 조회하기</button>
           </div>
     </div>
+    <script src="./bundle.js"></script>
 </body>
 </html>

@@ -1,9 +1,13 @@
 const { write } = require("@popperjs/core");
+const dayjs = require("dayjs");
 var firebase = require("firebase");
 require("firebase/auth");
 require("firebase/firestore");
 require("firebase/database");
 require("form-serializer");
+require("dayjs/locale/ko");
+// import 'dayjs/locale/ko'
+dayjs.locale('ko') // global로 한국어 locale 사용
 
 var firebaseEmailAuth;
 var firebaseDatabase;
@@ -11,6 +15,8 @@ var db;
 var formSerializeArray;
 var new_value;
 var isAdduser = false;
+var cnt = 0;
+var temp = "";
 
 // 파이어베이스 초기화
 var firebaseConfig = {
@@ -68,18 +74,9 @@ function loginSuccess(firebaseUser) {
 var skinbtn = document.getElementById("btn_submit");
 if (skinbtn) {
   skinbtn.onclick = function () {
-    alert("test");
     formSerializeArray = $("form").serializeObject();
     setData();
     saveToDB();
-  };
-}
-
-//확인 후 다음 페이지로 넘어가기
-var addQbtn = document.getElementById("btn_addQ");
-if (addQbtn) {
-  addQbtn.onclick = function () {
-    window.location.href = "/Munjin_4_addQ.html";
   };
 }
 
@@ -96,7 +93,7 @@ if (before) {
     db.collection(email)
       .doc(sessionStorage.getItem("0"))
       .delete()
-      .then(function() {
+      .then(function () {
         var url = document.referrer;
         if (url != null) {
           window.location.href = url;
@@ -110,7 +107,7 @@ if (before) {
       .catch(function (error) {
         console.error("Error removing document: ", error);
       });
-  }
+  };
 }
 
 // (질문,값) 세션에 저장하기
@@ -139,28 +136,126 @@ function saveToDB() {
   var user = firebase.auth().currentUser;
   var email;
   if (user != null) email = user.email;
-
+  var title = document.title;
+  let now = dayjs();
+  let info = {
+    $timestamp: now.format("YYYY년 MM월 DD일 HH:mm:ss"),
+    $category: title,
+    $status: "yet"
+  };
   db.collection(email)
     .doc(sessionStorage.getItem("0"))
     .set(formSerializeArray)
     .then(function () {
-      alert("저장되었습니다!ㅎㅅㅎ");
       window.location.href = "/Munjin_3_pyo.html";
+      db.collection(email)
+        .doc(sessionStorage.getItem("0"))
+        .set(info, { merge: true });
     })
     .catch(function () {
-      alert("에러가 발생했습니다, 다시 시도해주세요");
+      alert("에러가 발생했습니다, 다시 시도해주세요 "+error);
     });
 }
 
-//writeDr 완료하기
-var btnDr = document.getElementById("btn_writeDr");
-if (btnDr) {
-  btnDr.onclick = function () {
-    alert("감사합니다 :)")
+//확인 후 처음 페이지로 돌아가기
+var btnDone = document.getElementById("pyoDone");
+if (btnDone) {
+  btnDone.onclick = function () {
+    alert("저장되었습니다!");
     window.location.href = "/Munjin_1_main.html";
   };
 }
 
+//진료 기록 페이지 
+var historyList = document.getElementById("history");
+var moreBtn = document.getElementById("more");
+if (historyList) {
+  moreBtn.onclick = function () {
+   listUp();
+  };
+}
+
+function listUp() {
+  var user = firebase.auth().currentUser;
+  var email;
+  if (user != null) {
+    email = user.email;
+  }
+  var first = db.collection(email)
+  .orderBy("$timestamp", "desc")
+  .limit(3);
+
+  if (cnt === 0) {
+    return first.get().then(function (querySnapshot) {
+      querySnapshot.forEach(function (doc) {
+        historyList.innerHTML+="<tr><td>";
+        historyList.innerHTML+=doc.data().$category+" => "+doc.data().$timestamp;
+        temp = doc.data().$timestamp;
+        historyList.innerHTML+="</td></tr>";
+      });
+    },
+    cnt++)
+    .catch(function (error) {
+      console.log("데이터를 정렬하는 도중 오류가 발생했습니다, 다시 시도해주세요!", error);
+    })
+  }
+  else {
+    var next = db.collection(email)
+            .orderBy("$timestamp", "desc")
+            .startAfter(temp)
+            .limit(3);
+    return next.get().then(function (querySnapshot) {
+      querySnapshot.forEach(function (doc) {
+        historyList.innerHTML+="<tr><td>";
+        historyList.innerHTML+=doc.data().$category+" => "+doc.data().$timestamp;
+        temp = doc.data().$timestamp;
+        historyList.innerHTML+="</td></tr>";
+      });
+    }, cnt++)
+    .catch(function (error) {
+      console.log("데이터를 정렬하는 도중 오류가 발생했습니다, 다시 시도해주세요!", error);
+    });
+  }
+}
+//writeDr 완료하기
+var btnDr = document.getElementById("btn_writeDr");
+if (btnDr) {
+  btnDr.onclick = function () {
+    // formSerializeArray = $("form").serializeObject();
+    setAnswer();
+    alert("감사합니다 :)")
+
+  };
+}
+
+function setAnswer() {
+  var user = firebase.auth().currentUser;
+  var email;
+  if (user) email = user.email;
+  //yet 검색해서 update해주기
+}
+
+var findL = document.getElementById("latest");
+  if(findL) {
+    findL.onclick = function () {
+      listUp2();
+    }
+  }
+
+function listUp2() {
+  var user = firebase.auth().currentUser;
+  var email;
+  if (user) email = user.email;
+  var statusIsYet = db.collection(email).where("$status", "==", "yet");
+   statusIsYet.get().then(function (querySnapshot) {
+      querySnapshot.forEach(function (doc) {
+        findL.innerHTML = "현재 문진표: "+doc.data().$category+" - "+doc.data().$timestamp;
+    })
+  })
+    .catch(function (error) {
+      console.log("데이터를 불러오는 도중 오류가 발생했습니다, 다시 시도해주세요!", error);
+    });
+}
 
 // 회원가입 구현
 var joinUs = document.getElementById("btn_join");
