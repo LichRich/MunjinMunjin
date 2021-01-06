@@ -60,7 +60,7 @@ if (index) {
 
 //로그인 성공했을 때
 function loginSuccess(firebaseUser) {
-  alert("님 안녕하세요!");
+  alert("안녕하세요!");
   //로그인 성공한 유저 id 확인해 보기 - firebase database에 접근해서 데이터 조회 하는 함수
   firebaseDatabase
     .ref("users/" + firebaseUser.uid)
@@ -221,18 +221,26 @@ function listUp() {
 var btnDr = document.getElementById("btn_writeDr");
 if (btnDr) {
   btnDr.onclick = function () {
-    // formSerializeArray = $("form").serializeObject();
+    saidDr = $("form").serializeObject();
     setAnswer();
-    alert("감사합니다 :)")
-
+    alert("감사합니다 :) 잠시 후 메인 페이지로 이동합니다")
   };
+  
 }
 
 function setAnswer() {
   var user = firebase.auth().currentUser;
   var email;
   if (user) email = user.email;
+
   //yet 검색해서 update해주기
+  db.collection(email).where("$status", "==", "yet").limit(1).get().then(function (query) {
+    query.docs[0].ref.update({ $status : "done" })
+    query.docs[0].ref.update({saidDr})
+    setTimeout(function() {
+      location.href = "/Munjin_1_main.html";
+  }, 2000);
+})
 }
 
 var findL = document.getElementById("latest");
